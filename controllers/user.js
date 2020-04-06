@@ -1,6 +1,7 @@
 var loadModel = require('../models/user');
 
 exports.create = function (req, res) {
+    console.log(1)
     req.body.createdAt = req.body.createdAt?req.body.createdAt:new Date();
     loadModel.create(req.body, function (err, data) {
         if (!err) {

@@ -4,6 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var app = express();
+var mongoose=require("mongoose")
+const dev_db_url = 'mongodb://localhost:27017/pms';
+
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB, {
+    useNewUrlParser: true
+}, function(err) {
+    if (!err) {
+        console.log(`Db Connected`)
+    }
+});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
 app.use('/user', require('./routes/user'));
-app.use('/amenities',require('./route/amenities'));
+app.use('/amenities',require('./routes/amenities'));
 app.use('/backgroundVerificationStatus', require('./routes/backgroundVerificationStatus'));
 app.use('/bankAccount', require('./routes/bankAccount'));
 app.use('/leaseType', require('./routes/leaseType'));
