@@ -2,15 +2,31 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-    userName: {
+    name: {
         type: String,
         required: true
     },
-    password: {
+    address: {
         type: String,
         required: true
     },
-    role: {
+    propertyType: {
+        type: String,
+        required: true
+    },
+    leaseType: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    rentalTypeId: {
+        type: String,
+        required: true
+    },
+    securityDeposit: {
         type: String,
         required: true
     },
@@ -30,10 +46,8 @@ var dbSchema = new Schema({
         type: Date, default: Date.now,
         required: true
     }
-
-
 });
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('property', dbSchema);

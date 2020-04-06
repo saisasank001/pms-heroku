@@ -2,15 +2,15 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-    userName: {
+    tenantId: {
         type: String,
         required: true
     },
-    password: {
+    propertyId: {
         type: String,
         required: true
     },
-    role: {
+    unitId: {
         type: String,
         required: true
     },
@@ -30,10 +30,8 @@ var dbSchema = new Schema({
         type: Date, default: Date.now,
         required: true
     }
-
-
 });
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('assignpropertytotenant', dbSchema);

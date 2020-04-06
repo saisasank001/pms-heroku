@@ -2,15 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-    userName: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    role: {
+    name: {
         type: String,
         required: true
     },
@@ -30,10 +22,8 @@ var dbSchema = new Schema({
         type: Date, default: Date.now,
         required: true
     }
-
-
 });
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('sharingtype', dbSchema);

@@ -2,15 +2,15 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-    userName: {
+    name: {
         type: String,
         required: true
     },
-    password: {
+    icon: {
         type: String,
         required: true
     },
-    role: {
+    propertyType: {
         type: String,
         required: true
     },
@@ -30,10 +30,8 @@ var dbSchema = new Schema({
         type: Date, default: Date.now,
         required: true
     }
-
-
 });
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('amenities', dbSchema);

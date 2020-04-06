@@ -2,15 +2,27 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-    userName: {
+    bankName: {
         type: String,
         required: true
     },
-    password: {
+    bankAddress: {
         type: String,
         required: true
     },
-    role: {
+    accountNumber: {
+        type: String,
+        required: true
+    },
+    ifscCode: {
+        type: String,
+        required: true
+    },
+    mmid: {
+        type: String,
+        required: true
+    },
+    userId: {
         type: String,
         required: true
     },
@@ -30,10 +42,8 @@ var dbSchema = new Schema({
         type: Date, default: Date.now,
         required: true
     }
-
-
 });
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('bankaccount', dbSchema);

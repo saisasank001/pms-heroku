@@ -16,7 +16,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
-app.use('/users', require('./routes/user'));
+app.use('/user', require('./routes/user'));
+app.use('/amenities',require('./route/amenities'));
+app.use('/backgroundVerificationStatus', require('./routes/backgroundVerificationStatus'));
+app.use('/bankAccount', require('./routes/bankAccount'));
+app.use('/leaseType', require('./routes/leaseType'));
+app.use('/owner', require('./routes/owner'));
+app.use('/property', require('./routes/property'));
+app.use('/propertyToOwner', require('./routes/propertyToOwner'));
+app.use('/propertyToTenant', require('./routes/propertyToTenant'));
+app.use('/propertyType', require('./routes/propertyType'));
+app.use('/rentalType', require('./routes/rentalType'));
+app.use('/role', require('./routes/role'));
+app.use('/sharingType', require('./routes/sharingType'));
+app.use('/tenant', require('./routes/tenant'));
+app.use('/units', require('./routes/units'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -2,15 +2,35 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-    userName: {
+    name: {
         type: String,
         required: true
     },
-    password: {
+    email: {
         type: String,
         required: true
     },
-    role: {
+    mobileNumber: {
+        type: String,
+        required: true
+    },
+    currentAddress: {
+        type: String,
+        required: true
+    },
+    documentsUpload: {
+        type: String,
+        required: true
+    },
+    ownerPhoto: {
+        type: String,
+        required: true
+    },
+    agreementType: {
+        type: String,
+        required: true
+    },
+    backgroundVerificationStatus: {
         type: String,
         required: true
     },
@@ -30,10 +50,8 @@ var dbSchema = new Schema({
         type: Date, default: Date.now,
         required: true
     }
-
-
 });
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('owner', dbSchema);
