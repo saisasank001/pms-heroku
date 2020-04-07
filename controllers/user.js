@@ -87,11 +87,13 @@ exports.updateDetails = function (req, res) {
 }
 
 exports.updateStatusById = function (req, res) {
+    
     loadModel.updateOne({
         _id: req.params.id
     }, {
-        isActive: req.params.isActive
+        isAvailable: req.params.isAvailable
     }, function (err, data) {
+        console.log(req.params.id)
         if (!err) {
             res.send({
                 success: true,
@@ -107,11 +109,13 @@ exports.updateStatusById = function (req, res) {
 }
 
 exports.delete = function (req, res) {
-    loadModel.updateOne({
+   
+    loadModel.deleteOne({
         _id: req.body.id
     }, {
-        isActive: false
+        isAvailable: false
     }, function (err, data) {
+        
         if (!err) {
             res.send({
                 success: true,

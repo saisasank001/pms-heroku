@@ -11,7 +11,7 @@ router.post('/getByCondition', loadController.getByCondition);
 
 router.get('/getDetails/:id', loadController.getById);
 
-router.put('/updateStatus/:id/:isActive', loadController.updateStatusById);
+router.post('/updateStatus/:id/:isAvailable', loadController.updateStatusById);
 
 router.post('/updateDetails', loadController.updateDetails);
 
