@@ -1,29 +1,32 @@
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-    name: {
+      name: {
         type: String,
-        required: true
-    },
-    isAvailable: {
-        type: Boolean,
-        required: true
-    },
-    createdAt: {
+        required: true    },
+
+        isAvailable: {
         type: String,
-        required: true
+        required: true    },
+
+        createdAt:{
+        type:String,
+        required:false
     },
-    updatedAt: {
-        type: String,
-        required: true
+    updatedAt:{
+        type:String,
+        required:false
     },
     Timestamp: {
-        type: Date, default: Date.now,
+        type: Date, 
+        default: Date.now,
         required: true
     }
 });
 
 
 // Export the model
-module.exports = mongoose.model('leasetype', dbSchema);
+module.exports = mongoose.model('leaseType', dbSchema);
+

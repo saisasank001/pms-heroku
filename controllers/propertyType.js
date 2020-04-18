@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 
 var loadModel = require('../models/propertyType');
-=======
-var loadModel = require('../models/propertytype');
->>>>>>> 753e67f2ae01fc1cce6a7368234bf03c9b91134e
 
 exports.create = function (req, res) {
     req.body.createdAt = req.body.createdAt?req.body.createdAt:new Date();
@@ -94,11 +90,7 @@ exports.updateStatusById = function (req, res) {
     loadModel.updateOne({
         _id: req.params.id
     }, {
-<<<<<<< HEAD
         isActive: req.params.isActive
-=======
-        isAvailable: req.params.isAvailable
->>>>>>> 753e67f2ae01fc1cce6a7368234bf03c9b91134e
     }, function (err, data) {
         if (!err) {
             res.send({
@@ -115,17 +107,10 @@ exports.updateStatusById = function (req, res) {
 }
 
 exports.delete = function (req, res) {
-<<<<<<< HEAD
     loadModel.updateOne({
         _id: req.body.id
     }, {
         isActive: false
-=======
-    loadModel.deleteOne({
-        _id: req.body.id
-    }, {
-        isAvailable: false
->>>>>>> 753e67f2ae01fc1cce6a7368234bf03c9b91134e
     }, function (err, data) {
         if (!err) {
             res.send({
@@ -140,8 +125,5 @@ exports.delete = function (req, res) {
         }
     });
 }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 753e67f2ae01fc1cce6a7368234bf03c9b91134e

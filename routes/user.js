@@ -12,9 +12,9 @@ router.post('/getByCondition', loadController.getByCondition);
 
 router.get('/getDetails/:id', loadController.getById);
 
-router.post('/updateStatus/:id/:isAvailable', loadController.updateStatusById);
+router.put('/updateStatus/:id/:isActive', loadController.updateStatusById);
 
-router.post('/updateDetails/', loadController.updateDetails);
+router.post('/updateDetails', loadController.updateDetails);
 
 router.post('/delete', loadController.delete);
 

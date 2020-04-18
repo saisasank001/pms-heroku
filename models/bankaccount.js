@@ -1,49 +1,52 @@
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-    bankName: {
+      bankName: {
         type: String,
-        required: true
-    },
-    bankAddress: {
+        required: true    },
+
+        bankAddress: {
         type: String,
-        required: true
-    },
-    accountNumber: {
+        required: true    },
+
+        accountNumber: {
         type: String,
-        required: true
-    },
-    ifscCode: {
+        required: true    },
+
+        ifscCode: {
         type: String,
-        required: true
-    },
-    mmid: {
+        required: true    },
+
+        mmid: {
         type: String,
-        required: true
-    },
-    userId: {
+        required: true    },
+
+        userId: {
         type: String,
-        required: true
-    },
-    isAvailable: {
-        type: Boolean,
-        required: true
-    },
-    createdAt: {
+        required: true    },
+
+        isAvailable: {
         type: String,
-        required: true
+        required: true    },
+
+        createdAt:{
+        type:String,
+        required:false
     },
-    updatedAt: {
-        type: String,
-        required: true
+    updatedAt:{
+        type:String,
+        required:false
     },
     Timestamp: {
-        type: Date, default: Date.now,
+        type: Date, 
+        default: Date.now,
         required: true
     }
 });
 
 
 // Export the model
-module.exports = mongoose.model('bankaccount', dbSchema);
+module.exports = mongoose.model('bankAccount', dbSchema);
+

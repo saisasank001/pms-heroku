@@ -2,7 +2,6 @@
 var loadModel = require('../models/user');
 
 exports.create = function (req, res) {
-    console.log(1)
     req.body.createdAt = req.body.createdAt?req.body.createdAt:new Date();
     loadModel.create(req.body, function (err, data) {
         if (!err) {
@@ -88,13 +87,11 @@ exports.updateDetails = function (req, res) {
 }
 
 exports.updateStatusById = function (req, res) {
-    
     loadModel.updateOne({
         _id: req.params.id
     }, {
-        isAvailable: req.params.isAvailable
+        isActive: req.params.isActive
     }, function (err, data) {
-        console.log(req.params.id)
         if (!err) {
             res.send({
                 success: true,
@@ -110,13 +107,11 @@ exports.updateStatusById = function (req, res) {
 }
 
 exports.delete = function (req, res) {
-   
-    loadModel.deleteOne({
+    loadModel.updateOne({
         _id: req.body.id
     }, {
-        isAvailable: false
+        isActive: false
     }, function (err, data) {
-        
         if (!err) {
             res.send({
                 success: true,
