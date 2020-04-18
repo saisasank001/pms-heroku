@@ -3,15 +3,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-      username: {
+      roleName: {
         type: String,
         required: true    },
 
-        password: {
-        type: String,
-        required: true    },
-
-        role: {
+        access: {
         type: String,
         required: true    },
 
@@ -31,5 +27,5 @@ var dbSchema = new Schema({
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('roles', dbSchema);
 

@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
-var loadController = require('../controllers/user');
+var loadController = require('../controllers/leaseType');
 
 router.post('/create',  loadController.create);
 

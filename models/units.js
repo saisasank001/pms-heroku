@@ -3,15 +3,35 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-      username: {
+      unitDetails: {
         type: String,
         required: true    },
 
-        password: {
+        propertyId: {
         type: String,
         required: true    },
 
-        role: {
+        rent: {
+        type: String,
+        required: true    },
+
+        area: {
+        type: String,
+        required: true    },
+
+        facing: {
+        type: String,
+        required: true    },
+
+        amenities: {
+        type: String,
+        required: true    },
+
+        inspection: {
+        type: String,
+        required: true    },
+
+        propertyavailablefrom: {
         type: String,
         required: true    },
 
@@ -31,5 +51,5 @@ var dbSchema = new Schema({
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('units', dbSchema);
 

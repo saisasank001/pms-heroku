@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
-var loadController = require('../controllers/user');
+var loadController = require('../controllers/sharingType');
 
 router.post('/create',  loadController.create);
 

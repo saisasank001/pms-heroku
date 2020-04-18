@@ -3,15 +3,27 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-      username: {
+      userId: {
         type: String,
         required: true    },
 
-        password: {
+        propertyId: {
         type: String,
         required: true    },
 
-        role: {
+        userType: {
+        type: String,
+        required: true    },
+
+        photo: {
+        type: String,
+        required: true    },
+
+        fromDate: {
+        type: String,
+        required: true    },
+
+        toDate: {
         type: String,
         required: true    },
 
@@ -31,5 +43,5 @@ var dbSchema = new Schema({
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('agreement', dbSchema);
 

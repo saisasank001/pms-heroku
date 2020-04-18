@@ -1,5 +1,5 @@
 
-var loadModel = require('../models/user');
+var loadModel = require('../models/tenant');
 
 exports.create = function (req, res) {
     req.body.createdAt = req.body.createdAt?req.body.createdAt:new Date();

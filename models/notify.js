@@ -3,15 +3,27 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-      username: {
+      owner_tenant_id: {
         type: String,
         required: true    },
 
-        password: {
+        notifyMessage: {
         type: String,
         required: true    },
 
-        role: {
+        userType: {
+        type: String,
+        required: true    },
+
+        status: {
+        type: String,
+        required: true    },
+
+        salesGroup: {
+        type: String,
+        required: true    },
+
+        salesUserId: {
         type: String,
         required: true    },
 
@@ -31,5 +43,5 @@ var dbSchema = new Schema({
 
 
 // Export the model
-module.exports = mongoose.model('user', dbSchema);
+module.exports = mongoose.model('notify', dbSchema);
 
