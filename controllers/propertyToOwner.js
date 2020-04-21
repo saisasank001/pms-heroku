@@ -68,7 +68,7 @@ exports.getById = function (req, res) {
 
 exports.updateDetails = function (req, res) {
     loadModel.updateOne({
-        _id: req.body.id
+        _id: req.body.id?req.body.id:req.body._id
     }, req.body, function (err, device) {
         if (!err) {
             res.send({
@@ -87,7 +87,7 @@ exports.updateDetails = function (req, res) {
 
 exports.updateStatusById = function (req, res) {
     loadModel.updateOne({
-        _id: req.params.id
+        _id: req.params.id?req.params.id:req.params._id
     }, {
         isAvailable: req.params.isAvailable
     }, function (err, data) {
@@ -107,7 +107,7 @@ exports.updateStatusById = function (req, res) {
 
 exports.delete = function (req, res) {
     loadModel.deleteOne({
-        _id: req.body.id
+        _id: req.body.id?req.body.id:req.body._id
     }, {
         isAvailable: false
     }, function (err, data) {

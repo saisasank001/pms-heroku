@@ -88,7 +88,7 @@ exports.updateDetails = function (req, res) {
 
 exports.updateStatusById = function (req, res) {
     loadModel.updateOne({
-        _id: req.params.id
+        _id: req.params.id?req.params.id:req.params._id
     }, {
         isActive: req.params.isActive
     }, function (err, data) {

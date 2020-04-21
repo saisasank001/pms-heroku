@@ -25,7 +25,7 @@ var dbSchema = new Schema({
 
         rentalTypeId: {
         type: String,
-        required: true    },
+        required: false    },
 
         securityDeposit: {
         type: String,

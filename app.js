@@ -31,21 +31,25 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
-app.use('/user', require('./routes/user'));
-app.use('/amenities',require('./routes/amenities'));
-app.use('/backgroundVerificationStatus', require('./routes/backgroundVerificationStatus'));
-app.use('/bankAccount', require('./routes/bankAccount'));
-app.use('/leaseType', require('./routes/leaseType'));
-app.use('/owner', require('./routes/owner'));
-app.use('/property', require('./routes/property'));
-app.use('/propertyToOwner', require('./routes/propertyToOwner'));
-app.use('/propertyToTenant', require('./routes/propertyToTenant'));
 app.use('/propertyType', require('./routes/propertyType'));
-app.use('/rentalType', require('./routes/rentalType'));
-app.use('/role', require('./routes/role'));
+app.use('/user', require('./routes/user'));
+app.use('/leaseType', require('./routes/leaseType'));
+app.use('/amenities', require('./routes/amenities'));
 app.use('/sharingType', require('./routes/sharingType'));
-app.use('/tenant', require('./routes/tenant'));
+app.use('/rentalType', require('./routes/rentalType'));
+app.use('/property', require('./routes/property'));
 app.use('/units', require('./routes/units'));
+app.use('/owner', require('./routes/owner'));
+app.use('/propertyToOwner', require('./routes/assignPropertyToOwner'));
+app.use('/tenant', require('./routes/tenant'));
+app.use('/propertyToTenant', require('./routes/assignPropertyToTenant'));
+app.use('/agreements', require('./routes/agreement'));
+app.use('/bankAccount', require('./routes/bankAccount'));
+app.use('/notify', require('./routes/notify'));
+app.use('/salesGroup', require('./routes/salesGroup'));
+app.use('/role', require('./routes/roles'));
+app.use('/backgroundVerificationStatus', require('./routes/backgroundVerificationStatus'));
+
 app.get('/icons', function(req, res) {
   res.json([{
       icon: 'fa fa-home',

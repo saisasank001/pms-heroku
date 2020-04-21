@@ -15,6 +15,6 @@ router.post('/updateStatus/:id/:isAvailable', loadController.updateStatusById);
 
 router.post('/updateDetails', loadController.updateDetails);
 
-router.post('/delete', loadController.delete);
+router.post('/delete/:tmp', loadController.delete);
 
 module.exports = router;

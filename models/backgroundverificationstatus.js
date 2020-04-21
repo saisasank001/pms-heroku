@@ -11,16 +11,16 @@ var dbSchema = new Schema({
         required: true
     },
     isAvailable: {
-        type: Boolean,
+        type: String,
         required: true
     },
     createdAt: {
         type: String,
-        required: true
+        required: false
     },
     updatedAt: {
         type: String,
-        required: true
+        required: false
     },
     Timestamp: {
         type: Date, default: Date.now,

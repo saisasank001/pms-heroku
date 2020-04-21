@@ -37,6 +37,7 @@ exports.getByCondition = function (req, res) {
 exports.getAll = function (req, res) {
     loadModel.find({}, function (err, data) {
         if (!err) {
+            console.log(data)
             res.send({
                 success: true,
                 data
@@ -69,7 +70,7 @@ exports.getById = function (req, res) {
 
 exports.updateDetails = function (req, res) {
     loadModel.updateOne({
-        _id: req.body.id
+        _id: req.body.id?req.body.id:req.body._id
     }, req.body, function (err, device) {
         if (!err) {
             res.send({
@@ -88,7 +89,7 @@ exports.updateDetails = function (req, res) {
 
 exports.updateStatusById = function (req, res) {
     loadModel.updateOne({
-        _id: req.params.id
+        _id: req.params.id?req.params.id:req.params._id
     }, {
         isActive: req.params.isActive
     }, function (err, data) {
@@ -107,11 +108,10 @@ exports.updateStatusById = function (req, res) {
 }
 
 exports.delete = function (req, res) {
-    loadModel.updateOne({
-        _id: req.body.id
-    }, {
-        isActive: false
+    loadModel.deleteOne({
+        _id: req.body.id?req.body.id:req.body._id
     }, function (err, data) {
+      
         if (!err) {
             res.send({
                 success: true,
@@ -125,5 +125,6 @@ exports.delete = function (req, res) {
         }
     });
 }
+
 
 

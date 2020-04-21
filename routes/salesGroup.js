@@ -16,7 +16,7 @@ router.put('/updateStatus/:id/:isActive', loadController.updateStatusById);
 
 router.post('/updateDetails', loadController.updateDetails);
 
-router.post('/delete', loadController.delete);
+router.post('/delete/:tmp', loadController.delete);
 
 module.exports = router;
 
