@@ -12,11 +12,19 @@ var dbSchema = new Schema({
         required: true    },
 
         rent: {
-        type: String,
+        type: Number,
         required: true    },
 
         area: {
+        type: Number,
+        required: true    },
+
+	type:{
         type: String,
+        required: true    },
+
+	additionalRooms:{
+        type: Object,
         required: true    },
 
         facing: {
@@ -24,7 +32,7 @@ var dbSchema = new Schema({
         required: true    },
 
         amenities: {
-        type: String,
+        type: Object,
         required: true    },
 
         inspection: {
@@ -41,6 +49,10 @@ var dbSchema = new Schema({
 
         createdAt:{
         type:String,
+        required:false
+    },
+    sharingType:{
+        type: String,
         required:false
     },
     updatedAt:{

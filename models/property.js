@@ -3,51 +3,59 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
-      name: {
+    name: {
+      type: String,
+      required: true    },
+
+      address: {
+      type: String,
+      required: true    },
+
+      propertyType: {
+      type: String,
+      required: true    },
+
+      leaseType: {
+      type: String,
+      required: true    },
+
+      sharingType: {
         type: String,
         required: true    },
-
-        address: {
+  
+        gender: {
         type: String,
         required: true    },
+  
+      description: {
+      type: String,
+      required: true    },
 
-        propertyType: {
-        type: String,
-        required: true    },
+      rentalTypeId: {
+      type: String,
+      required: false    },
 
-        leaseType: {
-        type: String,
-        required: true    },
+      securityDeposit: {
+      type: Number,
+      required: true    },
 
-        description: {
-        type: String,
-        required: true    },
+      isAvailable: {
+      type: String,
+      required: true    },
 
-        rentalTypeId: {
-        type: String,
-        required: false    },
-
-        securityDeposit: {
-        type: String,
-        required: true    },
-
-        isAvailable: {
-        type: String,
-        required: true    },
-
-        createdAt:{
-        type:String,
-        required:false
-    },
-    updatedAt:{
-        type:String,
-        required:false
-    },
-    Timestamp: {
-        type: Date, 
-        default: Date.now,
-        required: true
-    }
+      createdAt:{
+      type:String,
+      required:false
+  },
+  updatedAt:{
+      type:String,
+      required:false
+  },
+  Timestamp: {
+      type: Date, 
+      default: Date.now,
+      required: true
+  }
 });
 
 
