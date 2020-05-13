@@ -7,7 +7,7 @@ var logger = require('morgan');
 var app = express();
 var cors = require('cors')
 var mongoose=require("mongoose")
-const dev_db_url = 'mongodb://localhost:27017/pms';
+const dev_db_url = 'mongodb+srv://admin:admin@cluster0-lujhw.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true';
 
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {
