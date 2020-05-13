@@ -291,7 +291,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"col-12\">\r\n    <div class=\"page-title-box\">\r\n        <div class=\"page-title-right\">\r\n            <ol class=\"breadcrumb m-0\">\r\n                <li class=\"breadcrumb-item\"><a href=\"javascript: void(0);\">assignPropertyToOwner</a></li>\r\n                <li class=\"breadcrumb-item \">Add</li>\r\n            </ol>\r\n        </div>\r\n        <h4 class=\"page-title\">assignPropertyToOwner Add</h4>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"row\" *ngFor=\"let items of assignPropertyToOwner; let in = index;\">\r\n    <!-- assign propery to owner -->\r\n    <div class=\"col-12\">\r\n        <div class=\"card m-b-30\">\r\n            <div class=\"card-body\">\r\n                <div class=\"row\">\r\n\r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Owner ID</label>\r\n\r\n                        <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['ownerId']\"\r\n                            placeholder=\"Select Owner\">\r\n                            <option value=\"\">Select Owner</option>\r\n                            <option value=\"newOwner\">Create Owner</option>\r\n                            <option *ngFor=\"let item of owners\" [value]=\"item['_id']\">{{item['name']}}</option>\r\n                        </select>\r\n\r\n                    </div>\r\n\r\n\r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Property ID</label>\r\n                        <input class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['propertyId']\" placeholder=\"Enter Property Id\">\r\n                        <!-- <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['propertyId']\">\r\n                            <option [value]=\"\">Select Property</option>\r\n                            <option *ngFor=\"let items of unitsArray\" [value]=\"items['propertyId']\">{{items['propertyId']}}</option>\r\n                        </select> -->\r\n\r\n                    </div>\r\n\r\n\r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Unit ID</label>\r\n\r\n                        <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['unitId']\">\r\n                            <option [value]=\"\">Select Unit</option>\r\n                            <option *ngFor=\"let items of unitsArray\" [value]=\"items['_id']\">{{items['unitDetails']}}</option>\r\n                        </select>\r\n\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!-- create owner -->        \r\n        <div class=\"col-12\" *ngIf=\"items['ownerId']=='newOwner'\">\r\n            <h3>Create Owner</h3>\r\n            <div class=\"card m-b-30\">\r\n              <div class=\"card-body\">\r\n                <div class=\"row\">\r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Name</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['name']\" placeholder=\"Enter Name\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Email</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['email']\" placeholder=\"Enter Email\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Mobile Number</label>\r\n                    <input type=\"number\" class=\"form-control\" [(ngModel)]=\"ownerArray[in]['mobileNumber']\" placeholder=\"Enter Mobile Number\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Current Address</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['currentAddress']\" placeholder=\"Enter Current Address\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Documents Upload</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['documentsUpload']\" type=\"file\"\r\n                      placeholder=\"Enter Documents Upload\" (change)=\"changeListenerDocument($event)\">\r\n                    <img [src]=\"document\" *ngIf=\"document\" style=\"width: 150px;margin: 10px;\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Owner Photo</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['ownerPhoto']\" type=\"file\" placeholder=\"Enter Owner Photo\"\r\n                      (change)=\"changeListenerPhoto($event)\">\r\n                    <img [src]=\"image\" *ngIf=\"image\" style=\"width: 150px;margin: 10px;\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Background Verification Status</label>\r\n                    <!-- <input class=\"form-control\" formControlName=\"backgroundVerificationStatus\" placeholder=\"Enter Background Verification Status\"> -->\r\n                    <select class=\"form-control\" [(ngModel)]=\"ownerArray[in]['backgroundVerificationStatus']\">\r\n                      <option value=\"\">Select Status</option>\r\n                      <option value=\"done\">Done</option>\r\n                      <option value=\"pending\">Pending</option>\r\n                      <option value=\"rejected\">Rejected</option>\r\n                    </select>\r\n                  </div>\r\n\r\n                </div>\r\n              </div>\r\n        \r\n            </div>\r\n        </div>\r\n\r\n        <!-- create bank account -->        \r\n        <div class=\"col-12\" *ngIf=\"items['ownerId']=='newOwner'\">\r\n            <h3>Bank Account</h3>\r\n            <div class=\"card m-b-30\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row\">\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Bank Name</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['bankName']\" placeholder=\"Enter Bank Name\">\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Bank Address</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['bankAddress']\" placeholder=\"Enter Bank Address\">\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Account Number</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['accountNumber']\" type=\"number\"\r\n                                placeholder=\"Enter Account Number\">\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Ifsc Code</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['ifscCode']\" placeholder=\"Enter Ifsc Code\">\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>MMID</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['mmid']\" type=\"number\" placeholder=\"Enter MMID\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n<div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n    <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\" (click)=\"submitFinal()\">get final data</button>\r\n  </div>";
+    __webpack_exports__["default"] = "\r\n<button (click)=\"addOwner()\">Add Owner</button>\r\n<div class=\"row\" *ngFor=\"let items of assignPropertyToOwner; let in = index;\">\r\n  <h3>Assign Property To Owner</h3>\r\n    <!-- assign propery to owner -->\r\n    <button (click)=\"removeOwner(in)\">Remove Owner</button>\r\n    <div class=\"col-12\">\r\n        <div class=\"card m-b-30\">\r\n            <div class=\"card-body\">\r\n                <div class=\"row\">\r\n\r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Owner ID</label>\r\n\r\n                        <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['ownerId']\"\r\n                            placeholder=\"Select Owner\" >\r\n                            <option value=\"\">Select Owner</option>\r\n                            <option value=\"newOwner\">Create Owner</option>\r\n                            <option *ngFor=\"let item of owners\" [value]=\"item['_id']\">{{item['name']}}</option>\r\n                        </select>\r\n\r\n                    </div>\r\n\r\n\r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Property ID</label>\r\n                        <input class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['propertyId']\" placeholder=\"Enter Property Id\">\r\n                        <!-- <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['propertyId']\">\r\n                            <option [value]=\"\">Select Property</option>\r\n                            <option *ngFor=\"let items of unitsArray\" [value]=\"items['propertyId']\">{{items['propertyId']}}</option>\r\n                        </select> -->\r\n\r\n                    </div>\r\n\r\n\r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Unit ID</label>\r\n\r\n                        <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['unitId']\">\r\n                            <!-- <option [value]=\"\">Select Unit</option> -->\r\n                            <option *ngFor=\"let items of unitsArray\" [value]=\"items['_id']\">{{items['unitDetails']}}</option>\r\n                        </select>\r\n\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!-- create owner -->        \r\n        <div class=\"col-12\" *ngIf=\"items['ownerId']=='newOwner'\">\r\n            <h3>Create Owner</h3>\r\n            <div class=\"card m-b-30\">\r\n              <div class=\"card-body\">\r\n                <div class=\"row\">\r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Name</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['name']\" placeholder=\"Enter Name\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Email</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['email']\" placeholder=\"Enter Email\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Mobile Number</label>\r\n                    <input type=\"number\" class=\"form-control\" [(ngModel)]=\"ownerArray[in]['mobileNumber']\" placeholder=\"Enter Mobile Number\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Current Address</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['currentAddress']\" placeholder=\"Enter Current Address\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Documents Upload</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['documentsUpload']\" type=\"file\"\r\n                      placeholder=\"Enter Documents Upload\" (change)=\"changeListenerDocument($event)\">\r\n                    <img [src]=\"document\" *ngIf=\"document\" style=\"width: 150px;margin: 10px;\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Owner Photo</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['ownerPhoto']\" type=\"file\" placeholder=\"Enter Owner Photo\"\r\n                      (change)=\"changeListenerPhoto($event)\">\r\n                    <img [src]=\"image\" *ngIf=\"image\" style=\"width: 150px;margin: 10px;\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Background Verification Status</label>\r\n                    <!-- <input class=\"form-control\" formControlName=\"backgroundVerificationStatus\" placeholder=\"Enter Background Verification Status\"> -->\r\n                    <select class=\"form-control\" [(ngModel)]=\"ownerArray[in]['backgroundVerificationStatus']\">\r\n                      <option value=\"\">Select Status</option>\r\n                      <option value=\"done\">Done</option>\r\n                      <option value=\"pending\">Pending</option>\r\n                      <option value=\"rejected\">Rejected</option>\r\n                    </select>\r\n                  </div>\r\n\r\n                </div>\r\n              </div>\r\n        \r\n            </div>\r\n        </div>\r\n\r\n        <!-- create bank account -->        \r\n        <div class=\"col-12\" *ngIf=\"items['ownerId']=='newOwner'\">\r\n            <h3>Bank Account</h3>\r\n            <div class=\"card m-b-30\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row\">\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Bank Name</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['bankName']\" placeholder=\"Enter Bank Name\">\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Bank Address</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['bankAddress']\" placeholder=\"Enter Bank Address\">\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Account Number</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['accountNumber']\" type=\"number\"\r\n                                placeholder=\"Enter Account Number\">\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Ifsc Code</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['ifscCode']\" placeholder=\"Enter Ifsc Code\">\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>MMID</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['mmid']\" type=\"number\" placeholder=\"Enter MMID\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n<div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n    <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\" (click)=\"submitFinal()\">get final data</button>\r\n  </div>";
     /***/
   },
 
@@ -611,7 +611,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- <p>create-property-add works!</p> -->\r\n\r\n\r\n<div class=\"row\" *ngIf=\"stage1=='true'\">\r\n  <h3>Add Property</h3>\r\n  <div class=\"col-12\" >\r\n    <div class=\"card m-b-30\">\r\n      <div class=\"card-body\">\r\n        <div class=\"row\">\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Name of the Property </label>\r\n            <input class=\"form-control\" [(ngModel)]=\"propertyArray['name']\" placeholder=\"Enter Name of the Property\">\r\n          </div>\r\n          \r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Address</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"propertyArray['address']\" placeholder=\"Enter Address\">\r\n\r\n          </div>\r\n\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Property Type</label>\r\n            <!-- <input class=\"form-control\" formControlName=\"propertyType\" placeholder=\"Enter Property Type\">-->\r\n            <select class='form-control' [(ngModel)]=\"propertyArray['propertyType']\" placeholder=\"Enter Property Type\" (change)=\"onchange(propertyArray['propertyType'])\">\r\n              <option value=\"\">Select Property Type</option>\r\n              <option *ngFor=\"let items of propertTypes\" [value]=\"items['_id']\">{{items['name']}}</option>\r\n            </select>\r\n          </div>\r\n\r\n         \r\n <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"open=='true'\">\r\n         <label>Gender</label>\r\n         <select class=\"form-control\" [(ngModel)]=\"propertyArray['gender']\">\r\n           <option value=\"\">Select Gender</option>\r\n           <option value=\"Male\">Male</option>\r\n           <option value=\"Female\">Female</option>\r\n           <option value=\"Other\">Co-Living</option>\r\n         </select>\r\n\r\n       </div> \r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Mode of Business</label>\r\n            <!-- <input class=\"form-control\" formControlName=\"leaseType\" placeholder=\"Enter Lease Type\">-->\r\n            <select class='form-control' [(ngModel)]=\"propertyArray['leaseType']\" placeholder=\"Enter Mode of Business\">\r\n              <option value=\"\">Select Lease Type</option>\r\n              <option *ngFor=\"let items of leaseTypes\" [value]=\"items['_id']\">{{items['name']}}</option>\r\n            </select>\r\n\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n            <label>Number of Floors</label>\r\n            <!-- <input class=\"form-control\" formControlName=\"leaseType\" placeholder=\"Enter Lease Type\">-->\r\n            <input type=\"number\" class=\"form-control\" [(ngModel)]=\"propertyArray['noOfFloors']\" placeholder=\"Enter Number of Floors\">\r\n\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n            <label>Number of Flats</label>\r\n            <!-- <input class=\"form-control\" formControlName=\"leaseType\" placeholder=\"Enter Lease Type\">-->\r\n            <input type=\"number\" class=\"form-control\" [(ngModel)]=\"propertyArray['noOfFlats']\" placeholder=\"Enter Number of Flats\">\r\n\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Description</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"propertyArray['description']\" placeholder=\"Enter Description\">\r\n\r\n          </div>\r\n\r\n\r\n          <!-- <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n         <label>Rental Type ID</label>\r\n         <select class='form-control' formControlName=\"rentalTypeId\" placeholder=\"Enter Rental Type ID\">\r\n           <option value=\"\">Select Rental Type</option>\r\n           <option *ngFor=\"let items of rentalTypes\" [value]=\"items['name']\">{{items['name']}}</option></select>\r\n         <small class=\"form-text text-muted invalid-data\"\r\n           *ngIf=\"propertyForm.controls['rentalTypeId'].invalid && (propertyForm.controls['rentalTypeId'].dirty || propertyForm.controls['rentalTypeId'].touched)\"\r\n           class=\"invalid-data\">\r\n           Please enter rental type id          </small>\r\n       </div> -->\r\n\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Security Deposit</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"propertyArray['securityDeposit']\" type=\"number\"\r\n              placeholder=\"Enter Security Deposit\">\r\n\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n           \r\n            <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n               (click)=\"propertyAddsubmit()\">Next</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!--units creation-->\r\n<div *ngIf=\"stage2=='true'\">\r\n  <div class=\"col-12\" >\r\n    <div class=\"page-title-box\">\r\n      <div class=\"page-title-right\">\r\n        <ol class=\"breadcrumb m-0\">\r\n          <li class=\"breadcrumb-item\"><a href=\"javascript: void(0);\">units</a></li>\r\n          <li class=\"breadcrumb-item active\">Add</li>\r\n        </ol>\r\n      </div>\r\n      <h4 class=\"page-title\">units Add</h4>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row\" >\r\n\r\n    <button (click)=\"addUnits()\">Add Unit</button>\r\n    <div class=\"col-12\" *ngFor=\"let unit of units;let unitIndex = index;\">\r\n      <button (click)=\"deleteUnit(unitIndex)\">Remove</button>\r\n      <div class=\"card m-b-30\">\r\n        <div class=\"card-body\">\r\n\r\n          <div class=\"row\">\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Unit Details</label>\r\n              <input class=\"form-control\" [(ngModel)]=\"unit.unitDetails\" placeholder=\"Enter Unit Details\">\r\n\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Rent for flat</label>\r\n              <input class=\"form-control\" type=\"number\" [(ngModel)]=\"unit.rent\" placeholder=\"Enter Rent\">\r\n            </div>\r\n\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Area(in Sq.Ft.)</label>\r\n              <input class=\"form-control\" type=\"number\" [(ngModel)]=\"unit.area\" placeholder=\"Enter Area\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Unit Type</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.type\" placeholder=\"Select Unit Type\">\r\n                <option value=\"\">Select type</option>\r\n                <option *ngFor=\"let items of types\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"open=='true'\">\r\n              <label>Sharing Type</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.sharingType\" placeholder=\"Select Sharing Type\">\r\n                <option value=\"\">Select type</option>\r\n                <option *ngFor=\"let items of sharingTypes\" [value]=\"items['_id']\">{{items['name']}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n              <label>Aditional Rooms</label>\r\n              <button (click)=\"addRoom(unitIndex)\">+</button>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngFor=\"let items of unit.additionalRooms, let roomIndex = index;\">\r\n                <div>\r\n                  <label>Room Name</label>\r\n                  <input class=\"form-control\" [(ngModel)]=\"unit.additionalRooms[roomIndex].name\" placeholder=\"Enter Room Name\">\r\n                  <button *ngIf=\"unit.additionalRooms[roomIndex]\" (click)=\"deleteUnitRoom(unitIndex,roomIndex)\">deleteRoom</button>\r\n                </div>                \r\n                <div>\r\n                  <label>Room Items</label>\r\n                  <button (click)=\"addUnitItem(unit,roomIndex)\">Add Item</button>\r\n                  <input *ngFor=\"let item of items.quantity; let itemIndex = index;\" [(ngModel)]=\"unit.additionalRooms[roomIndex].quantity[itemIndex].item \">\r\n                  <button *ngIf=\"unit.additionalRooms[roomIndex].quantity[itemIndex]\" (click)=\"deleteUnitItem(unitIndex,roomIndex,itemIndex)\">deleteItem</button>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Facing</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.facing\" placeholder=\"Select Facing\">\r\n                <option value=\"\">Select Facing</option>\r\n                <option *ngFor=\"let items of facing\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Furnishing</label>\r\n                <select class='form-control' [(ngModel)]=\"unit.furnishing\" placeholder=\"Select Furnishing Status\">\r\n                <!-- <option value=\"\">Select Furnishing Status</option> -->\r\n                <option *ngFor=\"let items of furnitures\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Tenancy Type</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.tenancyType\" placeholder=\"Select Tenancy Type\">\r\n               \r\n                <option *ngFor=\"let items of tenancyTypes\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Furniture Borne By</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.furnitureBorneBy\" placeholder=\"Select Furniture Borne By\">\r\n               \r\n                <option *ngFor=\"let items of furnitureBorne\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Power Bill No.</label>\r\n              <input class=\"form-control\"  [(ngModel)]=\"unit.powerBill\" placeholder=\"Enter Power Bill No.\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" >\r\n              <label>Latitude</label>\r\n              <input class=\"form-control\"  [(ngModel)]=\"unit.latitude\" placeholder=\"Enter Latitude\">\r\n            </div> \r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" >\r\n              <label>Longitude</label>\r\n              <input class=\"form-control\"  [(ngModel)]=\"unit.longitude\" placeholder=\"Enter Longitude\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Amenities</label>\r\n              <!--  <input class=\"form-control\" formControlName=\"amenities\" placeholder=\"Enter Amenities\">-->\r\n              <ng-multiselect-dropdown *ngIf=\"dropdownList.length\" [placeholder]=\"'Select Amenities'\"\r\n                [data]=\"dropdownList\" [(ngModel)]=\"unit.amenities\" [settings]=\"dropdownSettings\">\r\n              </ng-multiselect-dropdown>\r\n              \r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\" >\r\n              <label>Sale Deed</label>\r\n              <input type=\"file\" class=\"form-control\"  [(ngModel)]=\"unit.saleDeed\" placeholder=\"Enter Sale Deed\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Registration Agreement</label>\r\n              <input type=\"file\" class=\"form-control\"  [(ngModel)]=\"unit.registrationAgreement\" placeholder=\"Enter Registration Agreement\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"opens=='true'\">\r\n              <label>Lease Agreement</label>\r\n              <input type=\"file\" class=\"form-control\"  [(ngModel)]=\"unit.leaseAgreement\" placeholder=\"Enter Lease Agreement\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" >\r\n              <label>Property Manager</label>\r\n              <input class=\"form-control\"  [(ngModel)]=\"unit.propertyManager\" placeholder=\"Enter Property manager\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Inspection</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"inspection\" placeholder=\"Enter Inspection\"> -->\r\n              <select class=\"form-control\" [(ngModel)]=\"unit.inspection\" (click)=\"inspectionChange()\">\r\n                <!-- <option value=\"\">Select Category</option> -->\r\n                <option value=\"whileCreatingProperty\">While Listing the Property</option>\r\n                <!-- <option value=\"whilePropertyAgreement\">While property agreement</option>\r\n                <option value=\"whileHandingOverToTenant\">While handing over to tenant</option>\r\n                <option value=\"afterTenantLeave\">After tenant leave</option>\r\n                <option value=\"afterRenovation\">after renovation</option> -->\r\n              </select>\r\n              <div *ngIf=\"inspection==true\">\r\n                <input class=\"form-control\" type=\"file\" placeholder=\"Enter Inspection\">\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>propertyAvailableFrom</label>\r\n              <input class=\"form-control\" [(ngModel)]=\"unit.propertyavailablefrom\" type=\"date\"\r\n                placeholder=\"Enter propertyAvailableFrom\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Is Available</label>\r\n\r\n              <select class=\"form-control\" [(ngModel)]=\"unit.isAvailable\">\r\n                <!-- <option value=\"\">Select Is Available</option> -->\r\n                <option value=\"1\">Yes</option>\r\n                <option value=\"0\">No</option>\r\n              </select>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n      <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n      (click)=\"unitsPrevioussubmit()\">Previous</button>\r\n    </div>\r\n    <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n      \r\n      <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\" *ngIf=\"unitsAdded\"\r\n        (click)=\"unitsSubmit()\">Next</button>\r\n    </div>\r\n\r\n    \r\n  </div>\r\n</div>\r\n\r\n<!--create wizard-->\r\n<div class=\"col-12\" *ngIf=\"stage3=='true'\">\r\n  <div class=\"page-title-box\">\r\n      <div class=\"page-title-right\">\r\n          <ol class=\"breadcrumb m-0\">\r\n              <li class=\"breadcrumb-item\"><a href=\"javascript: void(0);\">assignPropertyToOwner</a></li>\r\n              <li class=\"breadcrumb-item \">Add</li>\r\n          </ol>\r\n      </div>\r\n      <h4 class=\"page-title\">assignPropertyToOwner Add</h4>\r\n  </div>\r\n</div>\r\n\r\n<!-- assign propery to ownerstage4 -->\r\n<div *ngIf=\"stage3=='true'\"> \r\n\r\n  <div class=\"row\"  *ngFor=\"let items of assignPropertyToOwner; let in = index;\">\r\n    \r\n    <div class=\"col-12\" >\r\n        <div class=\"card m-b-30\">\r\n            <div class=\"card-body\">\r\n                <div class=\"row\">\r\n  \r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Owner ID</label>\r\n  \r\n                        <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['ownerId']\"\r\n                            placeholder=\"Select Owner\">\r\n                            <option value=\"\">Select Owner</option>\r\n                            <option value=\"newOwner\">Create Owner</option>\r\n                            <option *ngFor=\"let item of owners\" [value]=\"item['_id']\">{{item['name']}}</option>\r\n                        </select>\r\n  \r\n                    </div>\r\n  \r\n  \r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Property ID</label>\r\n                        <input class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['propertyId']\" placeholder=\"Enter Property Id\">\r\n                        <!-- <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['propertyId']\">\r\n                            <option [value]=\"\">Select Property</option>\r\n                            <option *ngFor=\"let items of unitsArray\" [value]=\"items['propertyId']\">{{items['propertyId']}}</option>\r\n                        </select> -->\r\n  \r\n                    </div>\r\n  \r\n  \r\n                    <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Unit ID</label>\r\n  \r\n                        <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['unitId']\">\r\n                            <option [value]=\"\">Select Unit</option>\r\n                            <option *ngFor=\"let items of units\" [value]=\"items['_id']\">{{items['unitDetails']}}</option>\r\n                        </select>\r\n  \r\n                    </div>\r\n  \r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!-- create owner -->        \r\n        <div class=\"col-12\" *ngIf=\"items['ownerId']=='newOwner'\">\r\n            <h3>Create Owner</h3>\r\n            <div class=\"card m-b-30\">\r\n              <div class=\"card-body\">\r\n                <div class=\"row\">\r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Name</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['name']\" placeholder=\"Enter Name\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Email</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['email']\" placeholder=\"Enter Email\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Mobile Number</label>\r\n                    <input type=\"number\" class=\"form-control\" [(ngModel)]=\"ownerArray[in]['mobileNumber']\" placeholder=\"Enter Mobile Number\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Current Address</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['currentAddress']\" placeholder=\"Enter Current Address\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Documents Upload</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['documentsUpload']\" type=\"file\"\r\n                      placeholder=\"Enter Documents Upload\" (change)=\"changeListenerDocument($event)\">\r\n                    <img [src]=\"document\" *ngIf=\"document\" style=\"width: 150px;margin: 10px;\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Owner Photo</label>\r\n                    <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['ownerPhoto']\" type=\"file\" placeholder=\"Enter Owner Photo\"\r\n                      (change)=\"changeListenerPhoto($event)\">\r\n                    <img [src]=\"image\" *ngIf=\"image\" style=\"width: 150px;margin: 10px;\">\r\n                  </div>\r\n        \r\n        \r\n                  <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                    <label>Background Verification Status</label>\r\n                    <!-- <input class=\"form-control\" formControlName=\"backgroundVerificationStatus\" placeholder=\"Enter Background Verification Status\"> -->\r\n                    <select class=\"form-control\" [(ngModel)]=\"ownerArray[in]['backgroundVerificationStatus']\">\r\n                      <option value=\"\">Select Status</option>\r\n                      <option value=\"done\">Done</option>\r\n                      <option value=\"pending\">Pending</option>\r\n                      <option value=\"rejected\">Rejected</option>\r\n                    </select>\r\n                  </div>\r\n  \r\n                </div>\r\n              </div>\r\n        \r\n            </div>\r\n        </div>\r\n  \r\n        <!-- create bank account -->        \r\n        <div class=\"col-12\" *ngIf=\"items['ownerId']=='newOwner'\">\r\n            <h3>Bank Account</h3>\r\n            <div class=\"card m-b-30\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row\">\r\n                      <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                        <label>Account Holder Name</label>\r\n                        <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['accountHolderName']\" placeholder=\"Enter Account Holder Name\">\r\n                    </div>\r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Bank Name</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['bankName']\" placeholder=\"Enter Bank Name\">\r\n                        </div>\r\n  \r\n  \r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Bank Address</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['bankAddress']\" placeholder=\"Enter Bank Address\">\r\n                        </div>\r\n  \r\n  \r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Account Number</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['accountNumber']\" type=\"number\"\r\n                                placeholder=\"Enter Account Number\">\r\n                        </div>\r\n  \r\n  \r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>Ifsc Code</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['ifscCode']\" placeholder=\"Enter Ifsc Code\">\r\n                        </div>\r\n  \r\n  \r\n                        <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                            <label>MMID</label>\r\n                            <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['mmid']\" type=\"number\" placeholder=\"Enter MMID\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n  \r\n  </div>\r\n  <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n    <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\" (click)=\"assignPropertyNext()\">Next</button>\r\n  </div>\r\n</div> \r\n\r\n\r\n<!-- Agreement starts here stage4 -->\r\n<div class=\"row\" *ngIf=\"stage4=='true'\">\r\n  <h3>Agreement</h3>\r\n  <div class=\"col-12\">\r\n     <div class=\"card m-b-30\">\r\n        <div class=\"card-body\">\r\n           <div class=\"row\">\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>City </label>\r\n\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['city']\" placeholder=\"Enter City\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Date </label>\r\n\r\n                 <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['date']\" placeholder=\"Enter Date\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Month And Year </label>\r\n                 <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['monthYear']\"\r\n                    placeholder=\"Enter Month And year\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Name 1</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['name1']\" placeholder=\"Select Name1\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Address 1</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['address1']\" placeholder=\"Select Address 1\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Son of 1</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['sonOf1']\" placeholder=\"Select Son of1\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>leasor Age 1</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['leasorAge1']\"\r\n                    placeholder=\"Select leasor Age1\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Name 2</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['name2']\" placeholder=\"Select Name2\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Address 2</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['address2']\" placeholder=\"Select Address2\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Son of 2</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['sonOf2']\" placeholder=\"Select Son of2\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>leasor Age 2</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['leasorAge2']\"\r\n                    placeholder=\"Select leasor Age2\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Name 3</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['name3']\" placeholder=\"Select Name3\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Address 3</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['address3']\" placeholder=\"Select Address 3\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Son of 3</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['sonOf3']\" placeholder=\"Select Son of3\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>leasor Age 3</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['leasorAge3']\"\r\n                    placeholder=\"Select leasor Age3\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Lessor Email Address</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['lessorEmailAddress']\"\r\n                    placeholder=\"Select Lessor Email Address\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Lessee Email Address</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['lesseeEmailAddress']\"\r\n                    placeholder=\"Select Lessee Email Address\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Term Years</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['termYears']\" placeholder=\"Select Term Years\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Lessee Term</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['lesseeTerm']\"\r\n                    placeholder=\"Select Lessee Term\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Lessor Term</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['lessorTerm']\"\r\n                    placeholder=\"Select Lessor Term\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Lessor Lock in Period Months</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['lessorLockinPeriodMonths']\"\r\n                    placeholder=\"Select Lessor Lock in Period Months\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Fixed Rend Amount</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['fixedRendAmount']\"\r\n                    placeholder=\"Select Fixed Rend Amount\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Fixed Rent Start Date</label>\r\n                 <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['fixedRentStartDate']\"\r\n                    placeholder=\"Select Fixed Rent Start Date\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Completion Year</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['completionYear']\"\r\n                    placeholder=\"Select Completion Year\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Increment Percentage</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['incrementPercentage']\"\r\n                    placeholder=\"Select Increment Percentage\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Grace Start Date</label>\r\n                 <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['graceStartDate']\"\r\n                    placeholder=\"Select Grace Start Date\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Grace End Date</label>\r\n                 <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['graceEndDate']\"\r\n                    placeholder=\"Select Grace End Date\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Security Deposit</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['securityDeposit']\"\r\n                    placeholder=\"Select Security Deposit\">\r\n              </div>\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Termination Months</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['terminationMonths']\"\r\n                    placeholder=\"Select Termination Months\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Governing City</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['governingCity']\"\r\n                    placeholder=\"Governing City\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Property Address and Description</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['PropertyAddressandDescription']\"\r\n                    placeholder=\"Property Address and Description\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Number of Units</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['noOfUnits']\" placeholder=\"Number of Units\">\r\n              </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                 <label>Amenites Provided by Lessor</label>\r\n                 <input class=\"form-control\" [(ngModel)]=\"agreementArray['amenitiesByLessor']\"\r\n                    placeholder=\"Amenites Provided by Lessor\">\r\n              </div>\r\n\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n                 <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n                    (click)=\"submitFinal()\">Submit</button>\r\n              </div>\r\n           </div>\r\n        </div>\r\n     </div>\r\n  </div>\r\n</div>\r\n\r\n";
+    __webpack_exports__["default"] = "<!-- <p>create-property-add works!</p> -->\r\n\r\n<div class=\"row\" *ngIf=\"stage1=='true'\">\r\n  <h3>Add Property</h3>\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-b-30\">\r\n      <div class=\"card-body\">\r\n        <div class=\"row\">\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Name of the Property </label>\r\n            <input class=\"form-control\" [(ngModel)]=\"propertyArray['name']\" placeholder=\"Enter Name of the Property\">\r\n          </div>\r\n\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Address</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"propertyArray['address']\" placeholder=\"Enter Address\">\r\n\r\n          </div>\r\n\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Property Type</label>\r\n            <!-- <input class=\"form-control\" formControlName=\"propertyType\" placeholder=\"Enter Property Type\">-->\r\n            <select class='form-control' [(ngModel)]=\"propertyArray['propertyType']\" placeholder=\"Enter Property Type\"\r\n              (change)=\"onchange(propertyArray['propertyType'])\">\r\n              <option value=\"\">Select Property Type</option>\r\n              <option *ngFor=\"let items of propertTypes\" [value]=\"items['_id']\">{{items['name']}}</option>\r\n            </select>\r\n          </div>\r\n\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"pgopen=='true'\">\r\n            <label>Gender</label>\r\n            <select class=\"form-control\" [(ngModel)]=\"propertyArray['gender']\">\r\n              <option value=\"\">Select Gender</option>\r\n              <option value=\"Male\">Male</option>\r\n              <option value=\"Female\">Female</option>\r\n              <option value=\"Other\">Co-Living</option>\r\n            </select>\r\n\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Mode of Business</label>\r\n            <!-- <input class=\"form-control\" formControlName=\"leaseType\" placeholder=\"Enter Lease Type\">-->\r\n            <select class='form-control' [(ngModel)]=\"propertyArray['leaseType']\" placeholder=\"Enter Mode of Business\">\r\n              <option value=\"\">Select Lease Type</option>\r\n              <option *ngFor=\"let items of leaseTypes\" [value]=\"items['_id']\">{{items['name']}}</option>\r\n            </select>\r\n\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n            <label>Number of Floors</label>\r\n            <!-- <input class=\"form-control\" formControlName=\"leaseType\" placeholder=\"Enter Lease Type\">-->\r\n            <input type=\"number\" class=\"form-control\" [(ngModel)]=\"propertyArray['noOfFloors']\"\r\n              placeholder=\"Enter Number of Floors\">\r\n\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n            <label>Number of Flats</label>\r\n            <!-- <input class=\"form-control\" formControlName=\"leaseType\" placeholder=\"Enter Lease Type\">-->\r\n            <input type=\"number\" class=\"form-control\" [(ngModel)]=\"propertyArray['noOfFlats']\"\r\n              placeholder=\"Enter Number of Flats\">\r\n\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Description</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"propertyArray['description']\" placeholder=\"Enter Description\">\r\n\r\n          </div>\r\n\r\n\r\n          <!-- <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n         <label>Rental Type ID</label>\r\n         <select class='form-control' formControlName=\"rentalTypeId\" placeholder=\"Enter Rental Type ID\">\r\n           <option value=\"\">Select Rental Type</option>\r\n           <option *ngFor=\"let items of rentalTypes\" [value]=\"items['name']\">{{items['name']}}</option></select>\r\n         <small class=\"form-text text-muted invalid-data\"\r\n           *ngIf=\"propertyForm.controls['rentalTypeId'].invalid && (propertyForm.controls['rentalTypeId'].dirty || propertyForm.controls['rentalTypeId'].touched)\"\r\n           class=\"invalid-data\">\r\n           Please enter rental type id          </small>\r\n       </div> -->\r\n\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Security Deposit</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"propertyArray['securityDeposit']\" type=\"number\"\r\n              placeholder=\"Enter Security Deposit\">\r\n\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n\r\n            <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n              (click)=\"propertyAddsubmit()\">Next</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!--units creation-->\r\n<div *ngIf=\"stage2=='true'\">\r\n  <div class=\"col-12\">\r\n    <div class=\"page-title-box\">\r\n      <div class=\"page-title-right\">\r\n        <ol class=\"breadcrumb m-0\">\r\n          <li class=\"breadcrumb-item\"><a href=\"javascript: void(0);\">units</a></li>\r\n          <li class=\"breadcrumb-item active\">Add</li>\r\n        </ol>\r\n      </div>\r\n      <h4 class=\"page-title\">units Add</h4>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row\">\r\n\r\n    <button (click)=\"addUnits()\">Add Unit</button>\r\n    <div class=\"col-12\" *ngFor=\"let unit of units;let unitIndex = index;\">\r\n      <button (click)=\"deleteUnit(unitIndex)\">Remove</button>\r\n      <div class=\"card m-b-30\">\r\n        <div class=\"card-body\">\r\n\r\n          <div class=\"row\">\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Unit Details</label>\r\n              <input class=\"form-control\" [(ngModel)]=\"unit.unitDetails\" placeholder=\"Enter Unit Details\">\r\n\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Rent for flat</label>\r\n              <input class=\"form-control\" type=\"number\" [(ngModel)]=\"unit.rent\" placeholder=\"Enter Rent\">\r\n            </div>\r\n\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Area(in Sq.Ft.)</label>\r\n              <input class=\"form-control\" type=\"number\" [(ngModel)]=\"unit.area\" placeholder=\"Enter Area\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Unit Type</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.type\" placeholder=\"Select Unit Type\">\r\n                <option value=\"\">Select type</option>\r\n                <option *ngFor=\"let items of types\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"pgopen=='true'\">\r\n              <label>Sharing Type</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.sharingType\" placeholder=\"Select Sharing Type\">\r\n                <option value=\"\">Select type</option>\r\n                <option *ngFor=\"let items of sharingTypes\" [value]=\"items['_id']\">{{items['name']}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n              <label>Aditional Rooms</label>\r\n              <button (click)=\"addRoom(unitIndex)\">+</button>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\"\r\n                *ngFor=\"let items of unit.additionalRooms, let roomIndex = index;\">\r\n                <div>\r\n                  <label>Room Name</label>\r\n                  <input class=\"form-control\" [(ngModel)]=\"unit.additionalRooms[roomIndex].name\"\r\n                    placeholder=\"Enter Room Name\">\r\n                  <button *ngIf=\"unit.additionalRooms[roomIndex]\"\r\n                    (click)=\"deleteUnitRoom(unitIndex,roomIndex)\">deleteRoom</button>\r\n                </div>\r\n                <div>\r\n                  <label>Room Items</label>\r\n                  <button (click)=\"addUnitItem(unit,roomIndex)\">Add Item</button>\r\n                  <input *ngFor=\"let item of items.quantity; let itemIndex = index;\"\r\n                    [(ngModel)]=\"unit.additionalRooms[roomIndex].quantity[itemIndex].item \">\r\n                  <button *ngIf=\"unit.additionalRooms[roomIndex].quantity[itemIndex]\"\r\n                    (click)=\"deleteUnitItem(unitIndex,roomIndex,itemIndex)\">deleteItem</button>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Facing</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.facing\" placeholder=\"Select Facing\">\r\n                <option value=\"\">Select Facing</option>\r\n                <option *ngFor=\"let items of facing\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Furnishing</label>\r\n              <select class='form-control' [(ngModel)]=\"unit.furnishing\" placeholder=\"Select Furnishing Status\">\r\n                <!-- <option value=\"\">Select Furnishing Status</option> -->\r\n                <option *ngFor=\"let items of furnitures\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Tenancy Type</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.tenancyType\" placeholder=\"Select Tenancy Type\">\r\n\r\n                <option *ngFor=\"let items of tenancyTypes\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Furniture Borne By</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"facing\" placeholder=\"Enter Facing\">-->\r\n              <select class='form-control' [(ngModel)]=\"unit.furnitureBorneBy\" placeholder=\"Select Furniture Borne By\">\r\n\r\n                <option *ngFor=\"let items of furnitureBorne\" [value]=\"items\">{{items}}</option>\r\n              </select>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Power Bill No.</label>\r\n              <input class=\"form-control\" [(ngModel)]=\"unit.powerBill\" placeholder=\"Enter Power Bill No.\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Latitude</label>\r\n              <input class=\"form-control\" [(ngModel)]=\"unit.latitude\" placeholder=\"Enter Latitude\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Longitude</label>\r\n              <input class=\"form-control\" [(ngModel)]=\"unit.longitude\" placeholder=\"Enter Longitude\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Amenities</label>\r\n              <!--  <input class=\"form-control\" formControlName=\"amenities\" placeholder=\"Enter Amenities\">-->\r\n              <ng-multiselect-dropdown *ngIf=\"dropdownList.length\" [placeholder]=\"'Select Amenities'\"\r\n                [data]=\"dropdownList\" [(ngModel)]=\"unit.amenities\" [settings]=\"dropdownSettings\">\r\n              </ng-multiselect-dropdown>\r\n\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Sale Deed</label>\r\n              <input type=\"file\" class=\"form-control\" [(ngModel)]=\"unit.saleDeed\" placeholder=\"Enter Sale Deed\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Registration Agreement</label>\r\n              <input type=\"file\" class=\"form-control\" [(ngModel)]=\"unit.registrationAgreement\"\r\n                placeholder=\"Enter Registration Agreement\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\" *ngIf=\"apartmentopens=='true'\">\r\n              <label>Lease Agreement</label>\r\n              <input type=\"file\" class=\"form-control\" [(ngModel)]=\"unit.leaseAgreement\"\r\n                placeholder=\"Enter Lease Agreement\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Property Manager</label>\r\n              <input class=\"form-control\" [(ngModel)]=\"unit.propertyManager\" placeholder=\"Enter Property manager\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Inspection</label>\r\n              <!-- <input class=\"form-control\" formControlName=\"inspection\" placeholder=\"Enter Inspection\"> -->\r\n              <select class=\"form-control\" [(ngModel)]=\"unit.inspection\" (click)=\"inspectionChange()\">\r\n                <!-- <option value=\"\">Select Category</option> -->\r\n                <option value=\"whileCreatingProperty\">While Listing the Property</option>\r\n                <!-- <option value=\"whilePropertyAgreement\">While property agreement</option>\r\n                <option value=\"whileHandingOverToTenant\">While handing over to tenant</option>\r\n                <option value=\"afterTenantLeave\">After tenant leave</option>\r\n                <option value=\"afterRenovation\">after renovation</option> -->\r\n              </select>\r\n              <div *ngIf=\"inspection==true\">\r\n                <input class=\"form-control\" type=\"file\" placeholder=\"Enter Inspection\">\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>propertyAvailableFrom</label>\r\n              <input class=\"form-control\" [(ngModel)]=\"unit.propertyavailablefrom\" type=\"date\"\r\n                placeholder=\"Enter propertyAvailableFrom\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Is Available</label>\r\n\r\n              <select class=\"form-control\" [(ngModel)]=\"unit.isAvailable\">\r\n                <!-- <option value=\"\">Select Is Available</option> -->\r\n                <option value=\"1\">Yes</option>\r\n                <option value=\"0\">No</option>\r\n              </select>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n      <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n        (click)=\"unitsPrevioussubmit()\">Previous</button>\r\n    </div>\r\n    <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n\r\n      <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\" *ngIf=\"unitsAdded\"\r\n        (click)=\"unitsSubmit()\">Next</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n<!-- assign propery to ownerstage4 -->\r\n<div *ngIf=\"stage3=='true'\">\r\n\r\n  <button (click)=\"addOwner()\">Add Owner</button>\r\n  <div class=\"row\" *ngFor=\"let items of assignPropertyToOwner; let in = index;\">\r\n    <h3>Assign Property To Owner</h3>\r\n    <!-- assign propery to owner -->\r\n    <button (click)=\"removeOwner(in)\">Remove Owner</button>\r\n    <div class=\"col-12\">\r\n      <div class=\"card m-b-30\">\r\n        <div class=\"card-body\">\r\n          <div class=\"row\">\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Owner ID</label>\r\n\r\n              <select class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['ownerId']\"\r\n                placeholder=\"Select Owner\">\r\n                <option value=\"\">Select Owner</option>\r\n                <option value=\"newOwner\">Create Owner</option>\r\n                <option *ngFor=\"let item of owners\" [value]=\"item['_id']\">{{item['name']}}</option>\r\n              </select>\r\n\r\n            </div>\r\n\r\n\r\n              <!-- <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Property ID</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['propertyId']\"\r\n                  placeholder=\"Enter Property Id\">\r\n              </div> -->\r\n\r\n\r\n            <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n              <label>Unit ID</label>\r\n\r\n              <select multiple class=\"form-control\" [(ngModel)]=\"assignPropertyToOwner[in]['unitId']\" >\r\n                <!-- <option [value]=\"\">Select Unit</option> -->\r\n                <option *ngFor=\"let items of units\" [value]=\"items['_id']\">{{items['unitDetails']}}</option>\r\n              </select>\r\n\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <!-- create owner -->\r\n      <div class=\"col-12\" *ngIf=\"items['ownerId']=='newOwner'\">\r\n        <h3>Create Owner</h3>\r\n        <div class=\"card m-b-30\">\r\n          <div class=\"card-body\">\r\n            <div class=\"row\">\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Name</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['name']\" placeholder=\"Enter Name\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Email</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['email']\" placeholder=\"Enter Email\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Mobile Number</label>\r\n                <input type=\"number\" class=\"form-control\" [(ngModel)]=\"ownerArray[in]['mobileNumber']\"\r\n                  placeholder=\"Enter Mobile Number\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Current Address</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['currentAddress']\"\r\n                  placeholder=\"Enter Current Address\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Documents Upload</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['documentsUpload']\" type=\"file\"\r\n                  placeholder=\"Enter Documents Upload\" (change)=\"changeListenerDocument($event)\">\r\n                <img [src]=\"document\" *ngIf=\"document\" style=\"width: 150px;margin: 10px;\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Owner Photo</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"ownerArray[in]['ownerPhoto']\" type=\"file\"\r\n                  placeholder=\"Enter Owner Photo\" (change)=\"changeListenerPhoto($event)\">\r\n                <img [src]=\"image\" *ngIf=\"image\" style=\"width: 150px;margin: 10px;\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Background Verification Status</label>\r\n                <!-- <input class=\"form-control\" formControlName=\"backgroundVerificationStatus\" placeholder=\"Enter Background Verification Status\"> -->\r\n                <select class=\"form-control\" [(ngModel)]=\"ownerArray[in]['backgroundVerificationStatus']\">\r\n                  <option value=\"\">Select Status</option>\r\n                  <option value=\"done\">Done</option>\r\n                  <option value=\"pending\">Pending</option>\r\n                  <option value=\"rejected\">Rejected</option>\r\n                </select>\r\n              </div>\r\n\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <!-- create bank account -->\r\n      <div class=\"col-12\" *ngIf=\"items['ownerId']=='newOwner'\">\r\n        <h3>Bank Account</h3>\r\n        <div class=\"card m-b-30\">\r\n          <div class=\"card-body\">\r\n            <div class=\"row\">\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Account Holder Name</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['accountHolderName']\" placeholder=\"Enter Account Holder Name\">\r\n            </div>\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Bank Name</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['bankName']\"\r\n                  placeholder=\"Enter Bank Name\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Bank Address</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['bankAddress']\"\r\n                  placeholder=\"Enter Bank Address\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Account Number</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['accountNumber']\" type=\"number\"\r\n                  placeholder=\"Enter Account Number\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>Ifsc Code</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['ifscCode']\"\r\n                  placeholder=\"Enter Ifsc Code\">\r\n              </div>\r\n\r\n\r\n              <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n                <label>MMID</label>\r\n                <input class=\"form-control\" [(ngModel)]=\"bankAccountArray[in]['mmid']\" type=\"number\"\r\n                  placeholder=\"Enter MMID\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n  <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n    <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n      (click)=\"assignPrevioussubmit()\">Previous</button>\r\n  </div>\r\n  <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n    <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n      (click)=\"assignPropertyNext()\">Next</button>\r\n  </div>\r\n</div>\r\n\r\n\r\n<!-- Agreement starts here stage4 -->\r\n<div class=\"row\" *ngIf=\"stage4=='true'\">\r\n  <h3>Agreement</h3>\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-b-30\">\r\n      <div class=\"card-body\">\r\n        <div class=\"row\">\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>City </label>\r\n\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['city']\" placeholder=\"Enter City\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Date </label>\r\n\r\n            <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['date']\" placeholder=\"Enter Date\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Month And Year </label>\r\n            <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['monthYear']\"\r\n              placeholder=\"Enter Month And year\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Name 1</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['name1']\" placeholder=\"Select Name1\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Address 1</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['address1']\" placeholder=\"Select Address 1\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Son of 1</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['sonOf1']\" placeholder=\"Select Son of1\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>leasor Age 1</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['leasorAge1']\" placeholder=\"Select leasor Age1\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Name 2</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['name2']\" placeholder=\"Select Name2\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Address 2</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['address2']\" placeholder=\"Select Address2\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Son of 2</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['sonOf2']\" placeholder=\"Select Son of2\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>leasor Age 2</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['leasorAge2']\" placeholder=\"Select leasor Age2\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Name 3</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['name3']\" placeholder=\"Select Name3\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Address 3</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['address3']\" placeholder=\"Select Address 3\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Son of 3</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['sonOf3']\" placeholder=\"Select Son of3\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>leasor Age 3</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['leasorAge3']\" placeholder=\"Select leasor Age3\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Lessor Email Address</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['lessorEmailAddress']\"\r\n              placeholder=\"Select Lessor Email Address\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Lessee Email Address</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['lesseeEmailAddress']\"\r\n              placeholder=\"Select Lessee Email Address\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Term Years</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['termYears']\" placeholder=\"Select Term Years\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Lessee Term</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['lesseeTerm']\" placeholder=\"Select Lessee Term\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Lessor Term</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['lessorTerm']\" placeholder=\"Select Lessor Term\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Lessor Lock in Period Months</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['lessorLockinPeriodMonths']\"\r\n              placeholder=\"Select Lessor Lock in Period Months\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Fixed Rend Amount</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['fixedRendAmount']\"\r\n              placeholder=\"Select Fixed Rend Amount\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Fixed Rent Start Date</label>\r\n            <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['fixedRentStartDate']\"\r\n              placeholder=\"Select Fixed Rent Start Date\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Completion Year</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['completionYear']\"\r\n              placeholder=\"Select Completion Year\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Increment Percentage</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['incrementPercentage']\"\r\n              placeholder=\"Select Increment Percentage\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Grace Start Date</label>\r\n            <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['graceStartDate']\"\r\n              placeholder=\"Select Grace Start Date\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Grace End Date</label>\r\n            <input type=\"date\" class=\"form-control\" [(ngModel)]=\"agreementArray['graceEndDate']\"\r\n              placeholder=\"Select Grace End Date\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Security Deposit</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['securityDeposit']\"\r\n              placeholder=\"Select Security Deposit\">\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Termination Months</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['terminationMonths']\"\r\n              placeholder=\"Select Termination Months\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Governing City</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['governingCity']\" placeholder=\"Governing City\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Property Address and Description</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['PropertyAddressandDescription']\"\r\n              placeholder=\"Property Address and Description\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Number of Units</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['noOfUnits']\" placeholder=\"Number of Units\">\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-6 col-md-6\">\r\n            <label>Amenites Provided by Lessor</label>\r\n            <input class=\"form-control\" [(ngModel)]=\"agreementArray['amenitiesByLessor']\"\r\n              placeholder=\"Amenites Provided by Lessor\">\r\n          </div>\r\n\r\n\r\n          <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n            <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n              (click)=\"agreementPrevioussubmit()\">Previous</button>\r\n          </div>\r\n\r\n          <div class=\"col-xs-12 col-sm-12 col-md-12\">\r\n            <button type=\"button\" class=\"btn btn-info waves-effect waves-light pull-right\"\r\n              (click)=\"submitFinal()\">Submit</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>";
     /***/
   },
 
@@ -3998,7 +3998,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, HttpServiceService);
 
         this.http = http;
-        this.serverUrl = 'http://d1b1162c.ngrok.io/';
+        this.serverUrl = 'https://pms-innostes.herokuapp.com/';
         this.httpOptions = {
           headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
             'Content-Type': 'application/json'
@@ -5719,37 +5719,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               owners: _this15.owners
             });
           });
-          this.unitsArray.forEach(function (element) {
-            _this15.assignPropertyToOwner.push({
-              ownerId: '',
-              propertyId: '',
-              unitId: '',
-              isAvailable: '1'
-            });
-
-            _this15.bankAccountArray.push({
-              bankName: '',
-              bankAddress: '',
-              accountNumber: '',
-              ifscCode: '',
-              mmid: '',
-              isAvailable: '1',
-              userId: ''
-            });
-
-            _this15.ownerArray.push({
-              userId: _this15.userService.getUserId(),
-              name: '',
-              email: '',
-              mobileNumber: '',
-              currentAddress: '',
-              documentsUpload: '',
-              ownerPhoto: '',
-              agreementType: 'Fixed',
-              backgroundVerificationStatus: '',
-              isAvailable: '1'
-            });
-          });
+          this.addOwner(); // this.unitsArray.forEach(element => {
+          //   this.assignPropertyToOwner.push({ ownerId: '', propertyId: '', unitId: '', isAvailable: '1'})
+          //   this.bankAccountArray.push({ bankName: '', bankAddress: '', accountNumber: '', ifscCode: '', mmid: '', isAvailable: '1', userId: '' })
+          //   this.ownerArray.push({ userId:this.userService.getUserId(), name: '', email: '', mobileNumber: '', currentAddress: '', documentsUpload: '', ownerPhoto: '', agreementType: 'Fixed', backgroundVerificationStatus: '', isAvailable: '1' })
+          // });
         }
       }, {
         key: "getPropertyId",
@@ -5831,6 +5805,43 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
 
           myReader.readAsDataURL(file);
+        }
+      }, {
+        key: "addOwner",
+        value: function addOwner() {
+          this.assignPropertyToOwner.push({
+            ownerId: '',
+            propertyId: '',
+            unitId: '',
+            isAvailable: '1'
+          });
+          this.ownerArray.push({
+            userId: this.userService.getUserId(),
+            name: '',
+            email: '',
+            mobileNumber: '',
+            currentAddress: '',
+            documentsUpload: '',
+            ownerPhoto: '',
+            backgroundVerificationStatus: '',
+            isAvailable: '1'
+          });
+          this.bankAccountArray.push({
+            bankName: '',
+            bankAddress: '',
+            accountNumber: '',
+            ifscCode: '',
+            mmid: '',
+            isAvailable: '1',
+            userId: ''
+          });
+        }
+      }, {
+        key: "removeOwner",
+        value: function removeOwner(index) {
+          this.assignPropertyToOwner.splice(index, 1);
+          this.ownerArray.splice(index, 1);
+          this.bankAccountArray.splice(index, 1);
         } //create property promise
 
       }, {
@@ -5994,6 +6005,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function submitFinal() {
           var _this21 = this;
 
+          console.log("assignproperty array", this.assignPropertyToOwner);
+          console.log("owerArray", this.ownerArray);
+          console.log("bank Array", this.bankAccountArray);
           this.assignPropertyToOwner.forEach(function (element, index) {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this21, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
               var ownerId;
@@ -6002,7 +6016,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   switch (_context5.prev = _context5.next) {
                     case 0:
                       if (!(element.ownerId == "newOwner")) {
-                        _context5.next = 8;
+                        _context5.next = 10;
                         break;
                       }
 
@@ -6017,8 +6031,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       this.createBankAccount(index, ownerId); //assign property to owner 
 
                       this.assignPropertyOwner(index, this.property);
+                      _context5.next = 11;
+                      break;
 
-                    case 8:
+                    case 10:
+                      this.assignPropertyOwner(index, this.property);
+
+                    case 11:
                     case "end":
                       return _context5.stop();
                   }
@@ -6026,9 +6045,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }, _callee5, this);
             }));
           });
-          console.log("assignproperty array", this.assignPropertyToOwner);
-          console.log("owerArray", this.ownerArray);
-          console.log("bank Array", this.bankAccountArray);
         }
       }]);
 
@@ -9305,8 +9321,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.stage4 = 'false';
         this.stage5 = 'false';
         this.stage6 = 'false';
-        this.open = 'false';
-        this.opens = 'false';
+        this.pgopen = 'false';
+        this.apartmentopens = 'false';
         this.propertyAdded = true;
         this.unitsAdded = true;
         this.ownerAdded = true;
@@ -9592,7 +9608,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.getApi('amenities/getAll').subscribe(function (res) {
             _this51.amenities = res.data;
-          });
+          }); //add assign property 
+
+          this.addOwner();
         }
       }, {
         key: "onchange",
@@ -9601,19 +9619,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           //console.log('_id',this.propertyType);
           // this.propertTypes = res.data['name']
 
-          if (data == '5e9e95dd43d4634dc8a43a37') {
+          if (data == '5ebb92c33215810017bf230c') {
             console.log("pg selected");
-            this.open = 'true'; //pg
+            this.pgopen = 'true'; //pg
 
-            this.opens = 'false'; //apartment
+            this.apartmentopens = 'false'; //apartment
 
-            console.log(this.open);
+            console.log(this.pgopen);
           } else {
             console.log("pg not selected");
-            this.open = 'false';
+            this.pgopen = 'false';
             this.gender = " ";
-            this.opens = 'true';
-            console.log(this.open);
+            this.apartmentopens = 'true';
+            console.log(this.apartmentopens);
           } //})
 
         }
@@ -9753,8 +9771,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "unitsSubmit",
         value: function unitsSubmit() {
-          var _this53 = this;
-
           console.log("units json", this.units); // this.loaderService.showLoader('Adding Please wait ..').then(() => {
           //   try {
           //     this.httpService.postApi(this.units, 'units/create').subscribe((res) => {
@@ -9763,38 +9779,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           //         this.alertService.presentAlert('Success', 'Successfully added', 'Okay');
           //         // this.router.navigate(['/units-list'])
 
-          this.stage3 = 'true';
-          this.units.forEach(function (element) {
-            _this53.assignPropertyToOwner.push({
-              ownerId: '',
-              propertyId: '',
-              unitId: '',
-              isAvailable: '1'
-            });
-
-            _this53.bankAccountArray.push({
-              bankName: '',
-              bankAddress: '',
-              accountNumber: '',
-              ifscCode: '',
-              mmid: '',
-              isAvailable: '1',
-              userId: ''
-            });
-
-            _this53.ownerArray.push({
-              userId: _this53.userService.getUserId(),
-              name: '',
-              email: '',
-              mobileNumber: '',
-              currentAddress: '',
-              documentsUpload: '',
-              ownerPhoto: '',
-              agreementType: 'Fixed',
-              backgroundVerificationStatus: '',
-              isAvailable: '1'
-            });
-          }); //        console.log(this.stage3);
+          this.stage3 = 'true'; //        console.log(this.stage3);
           //         localStorage.setItem('unitData', JSON.stringify(res["data"]));
           //       } else {
           //         this.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
@@ -9922,28 +9907,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisPhoto",
         value: function readThisPhoto(inputValue) {
-          var _this54 = this;
+          var _this53 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this54.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this53.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this54.httpService.postApi({
+            _this53.httpService.postApi({
               ownerPhoto: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this54.loaderService.hideLoader();
+              _this53.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this54.ownerPhoto.patchValue({
+                _this53.ownerPhoto.patchValue({
                   ownerPhoto: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this54.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this53.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -9959,50 +9944,126 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisDocument",
         value: function readThisDocument(inputValue) {
-          var _this55 = this;
+          var _this54 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this55.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this54.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this55.httpService.postApi({
+            _this54.httpService.postApi({
               documentsUpload: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this55.loaderService.hideLoader();
+              _this54.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this55.documentsUpload.patchValue({
+                _this54.documentsUpload.patchValue({
                   documentsUpload: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this55.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this54.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
 
           myReader.readAsDataURL(file);
+        }
+      }, {
+        key: "addOwner",
+        value: function addOwner() {
+          this.assignPropertyToOwner.push({
+            ownerId: '',
+            propertyId: '',
+            unitId: '',
+            isAvailable: '1'
+          });
+          this.ownerArray.push({
+            userId: this.userService.getUserId(),
+            name: '',
+            email: '',
+            mobileNumber: '',
+            currentAddress: '',
+            documentsUpload: '',
+            ownerPhoto: '',
+            backgroundVerificationStatus: '',
+            isAvailable: '1'
+          });
+          this.bankAccountArray.push({
+            bankName: '',
+            bankAddress: '',
+            accountNumber: '',
+            ifscCode: '',
+            mmid: '',
+            isAvailable: '1',
+            userId: ''
+          });
+        }
+      }, {
+        key: "removeOwner",
+        value: function removeOwner(index) {
+          this.assignPropertyToOwner.splice(index, 1);
+          this.ownerArray.splice(index, 1);
+          this.bankAccountArray.splice(index, 1);
         } //create property promise
 
       }, {
         key: "createOwner",
         value: function createOwner(element, index) {
-          var _this56 = this;
+          var _this55 = this;
 
           return new Promise(function (resolve) {
-            _this56.ownerArray[index]['createdAt'] = new Date().getTime();
+            _this55.ownerArray[index]['createdAt'] = new Date().getTime();
 
-            _this56.loaderService.showLoader('Adding Please wait ..').then(function () {
+            _this55.loaderService.showLoader('Adding Please wait ..').then(function () {
               try {
-                _this56.httpService.postApi(_this56.ownerArray[index], 'owner/create').subscribe(function (res) {
-                  _this56.loaderService.hideLoader();
+                _this55.httpService.postApi(_this55.ownerArray[index], 'owner/create').subscribe(function (res) {
+                  _this55.loaderService.hideLoader();
 
                   if (res["success"]) {
                     resolve(res['data']['_id']); //this.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  } else {
+                    _this55.alertService.presentAlert('Error', res["message"], 'Okay');
+
+                    resolve(false);
+                  }
+                }, function (err) {
+                  _this55.loaderService.hideLoader();
+
+                  _this55.alertService.presentNetworkAlert();
+
+                  resolve(false);
+                });
+              } catch (e) {
+                _this55.loaderService.hideLoader();
+
+                _this55.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+
+                resolve(false);
+              }
+            });
+          });
+        } //create bank account promise
+
+      }, {
+        key: "createBankAccount",
+        value: function createBankAccount(index, ownerId) {
+          var _this56 = this;
+
+          this.bankAccountArray[index]['userId'] = ownerId;
+          this.bankAccountArray[index]['createdAt'] = new Date().getTime();
+          return new Promise(function (resolve) {
+            _this56.loaderService.showLoader('Adding Please wait ..').then(function () {
+              try {
+                _this56.httpService.postApi(_this56.bankAccountArray[index], 'bankAccount/create').subscribe(function (res) {
+                  _this56.loaderService.hideLoader();
+
+                  if (res["success"]) {
+                    console.log(res['data']);
+                    resolve(res); //this.alertService.presentAlert('Success', 'Successfully added', 'Okay');
                   } else {
                     _this56.alertService.presentAlert('Error', res["message"], 'Okay');
 
@@ -10024,78 +10085,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             });
           });
-        } //create bank account promise
-
-      }, {
-        key: "createBankAccount",
-        value: function createBankAccount(index, ownerId) {
-          var _this57 = this;
-
-          this.bankAccountArray[index]['userId'] = ownerId;
-          this.bankAccountArray[index]['createdAt'] = new Date().getTime();
-          return new Promise(function (resolve) {
-            _this57.loaderService.showLoader('Adding Please wait ..').then(function () {
-              try {
-                _this57.httpService.postApi(_this57.bankAccountArray[index], 'bankAccount/create').subscribe(function (res) {
-                  _this57.loaderService.hideLoader();
-
-                  if (res["success"]) {
-                    console.log(res['data']);
-                    resolve(res); //this.alertService.presentAlert('Success', 'Successfully added', 'Okay');
-                  } else {
-                    _this57.alertService.presentAlert('Error', res["message"], 'Okay');
-
-                    resolve(false);
-                  }
-                }, function (err) {
-                  _this57.loaderService.hideLoader();
-
-                  _this57.alertService.presentNetworkAlert();
-
-                  resolve(false);
-                });
-              } catch (e) {
-                _this57.loaderService.hideLoader();
-
-                _this57.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-
-                resolve(false);
-              }
-            });
-          });
         } // assign property ot owner promise
 
       }, {
         key: "assignPropertyOwner",
         value: function assignPropertyOwner(index, property) {
-          var _this58 = this;
+          var _this57 = this;
 
           this.assignPropertyToOwner[index]['createdAt'] = new Date().getTime();
           this.assignPropertyToOwner[index]['propertyId'] = property;
           return new Promise(function (resolve) {
-            _this58.loaderService.showLoader('Adding Please wait ..').then(function () {
+            _this57.loaderService.showLoader('Adding Please wait ..').then(function () {
               try {
-                _this58.httpService.postApi(_this58.assignPropertyToOwner[index], 'propertyToOwner/create').subscribe(function (res) {
-                  _this58.loaderService.hideLoader();
+                _this57.httpService.postApi(_this57.assignPropertyToOwner[index], 'propertyToOwner/create').subscribe(function (res) {
+                  _this57.loaderService.hideLoader();
 
                   if (res["success"]) {
                     resolve(res);
 
-                    _this58.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                    _this57.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                    _this58.router.navigate(['/assign-property-to-owner-list']);
+                    _this57.router.navigate(['/assign-property-to-owner-list']);
                   } else {
-                    _this58.alertService.presentAlert('Error', res["message"], 'Okay');
+                    _this57.alertService.presentAlert('Error', res["message"], 'Okay');
                   }
                 }, function (err) {
-                  _this58.loaderService.hideLoader();
+                  _this57.loaderService.hideLoader();
 
-                  _this58.alertService.presentNetworkAlert();
+                  _this57.alertService.presentNetworkAlert();
                 });
               } catch (e) {
-                _this58.loaderService.hideLoader();
+                _this57.loaderService.hideLoader();
 
-                _this58.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+                _this57.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
               }
             });
           });
@@ -10147,7 +10169,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submitFinal",
         value: function submitFinal() {
-          var _this59 = this;
+          var _this58 = this;
 
           console.log("final data calling");
           console.log("property json", this.propertyArray);
@@ -10157,14 +10179,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.log("asign property to owner", this.assignPropertyToOwner);
           console.log("agreement json", this.agreementArray);
           this.assignPropertyToOwner.forEach(function (element, index) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this59, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this58, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
               var ownerId;
               return regeneratorRuntime.wrap(function _callee11$(_context11) {
                 while (1) {
                   switch (_context11.prev = _context11.next) {
                     case 0:
                       if (!(element.ownerId == "newOwner")) {
-                        _context11.next = 8;
+                        _context11.next = 10;
                         break;
                       }
 
@@ -10179,8 +10201,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       this.createBankAccount(index, ownerId); //assign property to owner 
 
                       this.assignPropertyOwner(index, this.property);
+                      _context11.next = 11;
+                      break;
 
-                    case 8:
+                    case 10:
+                      this.assignPropertyOwner(index, this.property);
+
+                    case 11:
                     case "end":
                       return _context11.stop();
                   }
@@ -10199,31 +10226,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "agreementFormSubmit",
         value: function agreementFormSubmit(data) {
-          var _this60 = this;
+          var _this59 = this;
 
           data['propertyId'] = this.property;
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this60.httpService.postApi(data, 'agreements/create').subscribe(function (res) {
-                _this60.loaderService.hideLoader();
+              _this59.httpService.postApi(data, 'agreements/create').subscribe(function (res) {
+                _this59.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this60.alertService.presentAlert('Success', 'Successfully added', 'Okay'); // this.router.navigate(['/agreement-list'])
+                  _this59.alertService.presentAlert('Success', 'Successfully added', 'Okay'); // this.router.navigate(['/agreement-list'])
 
 
-                  console.log(_this60.stage4);
+                  console.log(_this59.stage4);
                 } else {
-                  _this60.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this59.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this60.loaderService.hideLoader();
+                _this59.loaderService.hideLoader();
 
-                _this60.alertService.presentNetworkAlert();
+                _this59.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this60.loaderService.hideLoader();
+              _this59.loaderService.hideLoader();
 
-              _this60.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this59.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
           this.stage3 = 'false';
@@ -10515,7 +10542,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CreateTenantAddComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this61 = this;
+          var _this60 = this;
 
           //tenant add
           this.tenantForm = this.formBuilder.group({
@@ -10548,25 +10575,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['1', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.httpService.getApi('property/getAll').subscribe(function (res) {
-            _this61.properties = res.data;
-            console.log(_this61.properties);
+            _this60.properties = res.data;
+            console.log(_this60.properties);
           });
         } //by changing property
 
       }, {
         key: "changeProperty",
         value: function changeProperty() {
-          var _this62 = this;
+          var _this61 = this;
 
           console.log(this.property);
           this.units.forEach(function (element) {
-            element.propertyId = _this62.getpropertyId();
+            element.propertyId = _this61.getpropertyId();
           });
           this.httpService.postApi({
             propertyId: this.property
           }, 'units/getByCondition').subscribe(function (res) {
-            _this62.units = res.data;
-            console.log(_this62.units);
+            _this61.units = res.data;
+            console.log(_this61.units);
           });
         }
       }, {
@@ -10584,28 +10611,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisPhoto",
         value: function readThisPhoto(inputValue) {
-          var _this63 = this;
+          var _this62 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this63.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this62.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this63.httpService.postApi({
+            _this62.httpService.postApi({
               tenantPhoto: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this63.loaderService.hideLoader();
+              _this62.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this63.tenantForm.patchValue({
+                _this62.tenantForm.patchValue({
                   tenantPhoto: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this63.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this62.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -10621,28 +10648,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisDocument",
         value: function readThisDocument(inputValue) {
-          var _this64 = this;
+          var _this63 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this64.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this63.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this64.httpService.postApi({
+            _this63.httpService.postApi({
               documentsUpload: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this64.loaderService.hideLoader();
+              _this63.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this64.tenantForm.patchValue({
+                _this63.tenantForm.patchValue({
                   documentsUpload: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this64.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this63.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -10652,52 +10679,84 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(tenantData) {
-          var _this65 = this;
+          var _this64 = this;
 
           var data = {};
           tenantData['createdAt'] = new Date().getTime();
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this65.httpService.postApi(tenantData, 'tenant/create').subscribe(function (res) {
-                _this65.loaderService.hideLoader();
+              _this64.httpService.postApi(tenantData, 'tenant/create').subscribe(function (res) {
+                _this64.loaderService.hideLoader();
 
                 if (res["success"]) {
                   console.log(res['data']['_id']); //property to tenant form starts
 
                   data['tenantId'] = res['data']['_id'];
-                  data['propertyId'] = _this65.property, data['unitId'] = _this65.unit;
-                  data['isAvailable'] = '1', _this65.loaderService.showLoader('Adding Please wait ..').then(function () {
+                  data['propertyId'] = _this64.property, data['unitId'] = _this64.unit;
+                  data['isAvailable'] = '1', _this64.loaderService.showLoader('Adding Please wait ..').then(function () {
                     try {
-                      _this65.httpService.postApi(data, 'propertyToTenant/create').subscribe(function (res) {
-                        _this65.loaderService.hideLoader();
+                      _this64.httpService.postApi(data, 'propertyToTenant/create').subscribe(function (res) {
+                        _this64.loaderService.hideLoader();
 
                         if (res["success"]) {
-                          _this65.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                          _this64.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                          _this65.stage = true; //this.router.navigate(['/tenant-list'])
+                          _this64.stage = true; //this.router.navigate(['/tenant-list'])
 
                           localStorage.setItem('assignPropertyToTenantData', JSON.stringify(res["data"]));
                         } else {
-                          _this65.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                          _this64.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                         }
                       }, function (err) {
-                        _this65.loaderService.hideLoader();
+                        _this64.loaderService.hideLoader();
 
-                        _this65.alertService.presentNetworkAlert();
+                        _this64.alertService.presentNetworkAlert();
                       });
                     } catch (e) {
-                      _this65.loaderService.hideLoader();
+                      _this64.loaderService.hideLoader();
 
-                      _this65.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+                      _this64.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
                     }
                   }); //property to tenant form ends 
 
-                  _this65.alertService.presentAlert('Success', 'Successfully added', 'Okay'); //this.router.navigate(['/tenant-list'])
+                  _this64.alertService.presentAlert('Success', 'Successfully added', 'Okay'); //this.router.navigate(['/tenant-list'])
 
 
                   localStorage.setItem('tenantData', JSON.stringify(res["data"]));
                 } else {
-                  _this65.alertService.presentAlert('Error', res["message"], 'Okay');
+                  _this64.alertService.presentAlert('Error', res["message"], 'Okay');
+                }
+              }, function (err) {
+                _this64.loaderService.hideLoader();
+
+                _this64.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this64.loaderService.hideLoader();
+
+              _this64.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        } //tenant add ends here
+        //agreement submit
+
+      }, {
+        key: "agreementSubmit",
+        value: function agreementSubmit(data) {
+          var _this65 = this;
+
+          data['propertyId'] = this.property;
+          console.log(data['propertyId']);
+          this.loaderService.showLoader('Adding Please wait ..').then(function () {
+            try {
+              _this65.httpService.postApi(data, 'agreements/create').subscribe(function (res) {
+                _this65.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this65.alertService.presentAlert('Success', 'Successfully added', 'Okay'); //this.router.navigate(['/agreement-list'])
+
+                } else {
+                  _this65.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
                 _this65.loaderService.hideLoader();
@@ -10708,38 +10767,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this65.loaderService.hideLoader();
 
               _this65.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        } //tenant add ends here
-        //agreement submit
-
-      }, {
-        key: "agreementSubmit",
-        value: function agreementSubmit(data) {
-          var _this66 = this;
-
-          data['propertyId'] = this.property;
-          console.log(data['propertyId']);
-          this.loaderService.showLoader('Adding Please wait ..').then(function () {
-            try {
-              _this66.httpService.postApi(data, 'agreements/create').subscribe(function (res) {
-                _this66.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this66.alertService.presentAlert('Success', 'Successfully added', 'Okay'); //this.router.navigate(['/agreement-list'])
-
-                } else {
-                  _this66.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this66.loaderService.hideLoader();
-
-                _this66.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this66.loaderService.hideLoader();
-
-              _this66.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -10966,29 +10993,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this67 = this;
+          var _this66 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this67.httpService.postApi(data, 'leaseType/create').subscribe(function (res) {
-                _this67.loaderService.hideLoader();
+              _this66.httpService.postApi(data, 'leaseType/create').subscribe(function (res) {
+                _this66.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this67.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this66.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this67.router.navigate(['/lease-type-list']);
+                  _this66.router.navigate(['/lease-type-list']);
                 } else {
-                  _this67.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this66.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this67.loaderService.hideLoader();
+                _this66.loaderService.hideLoader();
 
-                _this67.alertService.presentNetworkAlert();
+                _this66.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this67.loaderService.hideLoader();
+              _this66.loaderService.hideLoader();
 
-              _this67.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this66.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -11125,18 +11152,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this68 = this;
+          var _this67 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this68.httpService.postApi(data, 'leaseType/updateDetails' + id).subscribe(function (res) {
+              _this67.httpService.postApi(data, 'leaseType/updateDetails' + id).subscribe(function (res) {
+                _this67.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this67.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this67.router.navigate(['/lease-type-list']);
+                } else {
+                  _this67.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this67.loaderService.hideLoader();
+
+                _this67.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this67.loaderService.hideLoader();
+
+              _this67.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this68 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this68.httpService.postApi(data, 'leaseType/delete/' + data.id).subscribe(function (res) {
                 _this68.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this68.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this68.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this68.router.navigate(['/lease-type-list']);
                 } else {
@@ -11151,35 +11207,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this68.loaderService.hideLoader();
 
               _this68.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this69 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this69.httpService.postApi(data, 'leaseType/delete/' + data.id).subscribe(function (res) {
-                _this69.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this69.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this69.router.navigate(['/lease-type-list']);
-                } else {
-                  _this69.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this69.loaderService.hideLoader();
-
-                _this69.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this69.loaderService.hideLoader();
-
-              _this69.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -11324,7 +11351,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LeaseTypeEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this70 = this;
+          var _this69 = this;
 
           this.leaseTypeForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -11332,39 +11359,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this70.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this69.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this70.leaseTypeForm.patchValue(_this70.editDetails);
+            _this69.leaseTypeForm.patchValue(_this69.editDetails);
 
-            _this70.loaderService.hideLoader();
+            _this69.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this71 = this;
+          var _this70 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this71.httpService.postApi(data, 'leaseType/updateDetails/').subscribe(function (res) {
-                _this71.loaderService.hideLoader();
+              _this70.httpService.postApi(data, 'leaseType/updateDetails/').subscribe(function (res) {
+                _this70.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this71.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this70.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this71.router.navigate(['/lease-type-list']);
+                  _this70.router.navigate(['/lease-type-list']);
                 } else {
-                  _this71.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this70.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this71.loaderService.hideLoader();
+                _this70.loaderService.hideLoader();
 
-                _this71.alertService.presentNetworkAlert();
+                _this70.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this71.loaderService.hideLoader();
+              _this70.loaderService.hideLoader();
 
-              _this71.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this70.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -11498,21 +11525,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LeaseTypeListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this72 = this;
+          var _this71 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this72.httpService.getApi('leaseType/getAll').subscribe(function (res) {
-                _this72.json = res.success ? res.data : [];
+              _this71.httpService.getApi('leaseType/getAll').subscribe(function (res) {
+                _this71.json = res.success ? res.data : [];
 
-                _this72.loaderService.hideLoader();
+                _this71.loaderService.hideLoader();
               }, function (err) {
-                _this72.loaderService.hideLoader();
+                _this71.loaderService.hideLoader();
 
-                _this72.alertService.presentNetworkAlert();
+                _this71.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this72.loaderService.hideLoader();
+              _this71.loaderService.hideLoader();
             }
           });
         }
@@ -11772,28 +11799,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisPhoto",
         value: function readThisPhoto(inputValue) {
-          var _this73 = this;
+          var _this72 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this73.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this72.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this73.httpService.postApi({
+            _this72.httpService.postApi({
               ownerPhoto: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this73.loaderService.hideLoader();
+              _this72.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this73.ownerForm.patchValue({
+                _this72.ownerForm.patchValue({
                   ownerPhoto: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this73.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this72.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -11809,28 +11836,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisDocument",
         value: function readThisDocument(inputValue) {
-          var _this74 = this;
+          var _this73 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this74.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this73.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this74.httpService.postApi({
+            _this73.httpService.postApi({
               documentsUpload: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this74.loaderService.hideLoader();
+              _this73.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this74.ownerForm.patchValue({
+                _this73.ownerForm.patchValue({
                   documentsUpload: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this74.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this73.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -11840,29 +11867,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this75 = this;
+          var _this74 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this75.httpService.postApi(data, 'owner/create').subscribe(function (res) {
-                _this75.loaderService.hideLoader();
+              _this74.httpService.postApi(data, 'owner/create').subscribe(function (res) {
+                _this74.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this75.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this74.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this75.router.navigate(['/owner-list']);
+                  _this74.router.navigate(['/owner-list']);
                 } else {
-                  _this75.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this74.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this75.loaderService.hideLoader();
+                _this74.loaderService.hideLoader();
 
-                _this75.alertService.presentNetworkAlert();
+                _this74.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this75.loaderService.hideLoader();
+              _this74.loaderService.hideLoader();
 
-              _this75.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this74.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -12001,18 +12028,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this76 = this;
+          var _this75 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this76.httpService.postApi(data, 'owner/updateDetails' + id).subscribe(function (res) {
+              _this75.httpService.postApi(data, 'owner/updateDetails' + id).subscribe(function (res) {
+                _this75.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this75.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this75.router.navigate(['/owner-list']);
+                } else {
+                  _this75.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this75.loaderService.hideLoader();
+
+                _this75.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this75.loaderService.hideLoader();
+
+              _this75.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this76 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this76.httpService.postApi(data, 'owner/delete/' + data.id).subscribe(function (res) {
                 _this76.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this76.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this76.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this76.router.navigate(['/owner-list']);
                 } else {
@@ -12027,35 +12083,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this76.loaderService.hideLoader();
 
               _this76.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this77 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this77.httpService.postApi(data, 'owner/delete/' + data.id).subscribe(function (res) {
-                _this77.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this77.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this77.router.navigate(['/owner-list']);
-                } else {
-                  _this77.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this77.loaderService.hideLoader();
-
-                _this77.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this77.loaderService.hideLoader();
-
-              _this77.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -12207,7 +12234,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(OwnerEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this78 = this;
+          var _this77 = this;
 
           this.ownerForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -12223,11 +12250,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this78.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this77.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this78.ownerForm.patchValue(_this78.editDetails);
+            _this77.ownerForm.patchValue(_this77.editDetails);
 
-            _this78.loaderService.hideLoader();
+            _this77.loaderService.hideLoader();
           });
         }
       }, {
@@ -12239,28 +12266,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisPhoto",
         value: function readThisPhoto(inputValue) {
-          var _this79 = this;
+          var _this78 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this79.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this78.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this79.httpService.postApi({
+            _this78.httpService.postApi({
               photo: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this79.loaderService.hideLoader();
+              _this78.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this79.ownerForm.patchValue({
+                _this78.ownerForm.patchValue({
                   ownerPhoto: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this79.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this78.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -12276,28 +12303,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisDocument",
         value: function readThisDocument(inputValue) {
-          var _this80 = this;
+          var _this79 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this80.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this79.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this80.httpService.postApi({
+            _this79.httpService.postApi({
               photo: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this80.loaderService.hideLoader();
+              _this79.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this80.ownerForm.patchValue({
+                _this79.ownerForm.patchValue({
                   documentsUpload: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this80.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this79.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -12307,29 +12334,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this81 = this;
+          var _this80 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this81.httpService.postApi(data, 'owner/updateDetails/').subscribe(function (res) {
-                _this81.loaderService.hideLoader();
+              _this80.httpService.postApi(data, 'owner/updateDetails/').subscribe(function (res) {
+                _this80.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this81.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this80.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this81.router.navigate(['/owner-list']);
+                  _this80.router.navigate(['/owner-list']);
                 } else {
-                  _this81.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this80.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this81.loaderService.hideLoader();
+                _this80.loaderService.hideLoader();
 
-                _this81.alertService.presentNetworkAlert();
+                _this80.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this81.loaderService.hideLoader();
+              _this80.loaderService.hideLoader();
 
-              _this81.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this80.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -12466,21 +12493,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(OwnerListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this82 = this;
+          var _this81 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this82.httpService.getApi('owner/getAll').subscribe(function (res) {
-                _this82.json = res.data;
+              _this81.httpService.getApi('owner/getAll').subscribe(function (res) {
+                _this81.json = res.data;
 
-                _this82.loaderService.hideLoader();
+                _this81.loaderService.hideLoader();
               }, function (err) {
-                _this82.loaderService.hideLoader();
+                _this81.loaderService.hideLoader();
 
-                _this82.alertService.presentNetworkAlert();
+                _this81.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this82.loaderService.hideLoader();
+              _this81.loaderService.hideLoader();
             }
           });
         }
@@ -12637,7 +12664,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PropertyAddComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this83 = this;
+          var _this82 = this;
 
           this.propertyForm = this.formBuilder.group({
             name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -12651,43 +12678,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.httpService.getApi('propertyType/getAll').subscribe(function (res) {
             console.log(res);
-            _this83.propertTypes = res.data;
+            _this82.propertTypes = res.data;
           });
           this.httpService.getApi('leaseType/getAll').subscribe(function (res) {
             console.log(res);
-            _this83.leaseTypes = res.data;
+            _this82.leaseTypes = res.data;
           });
           this.httpService.getApi('rentalType/getAll').subscribe(function (res) {
             console.log(res);
-            _this83.rentalTypes = res.data;
+            _this82.rentalTypes = res.data;
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this84 = this;
+          var _this83 = this;
 
+          data['createdAt'] = new Date().getTime();
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this84.httpService.postApi(data, 'property/create').subscribe(function (res) {
-                _this84.loaderService.hideLoader();
+              _this83.httpService.postApi(data, 'property/create').subscribe(function (res) {
+                _this83.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this84.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this83.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this84.router.navigate(['/property-list']);
+                  _this83.router.navigate(['/property-list']);
                 } else {
-                  _this84.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this83.alertService.presentAlert('Error', res["message"], 'Okay');
                 }
               }, function (err) {
-                _this84.loaderService.hideLoader();
+                _this83.loaderService.hideLoader();
 
-                _this84.alertService.presentNetworkAlert();
+                _this83.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this84.loaderService.hideLoader();
+              _this83.loaderService.hideLoader();
 
-              _this84.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this83.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -12824,18 +12852,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this85 = this;
+          var _this84 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this85.httpService.postApi(data, 'property/updateDetails' + id).subscribe(function (res) {
+              _this84.httpService.postApi(data, 'property/updateDetails' + id).subscribe(function (res) {
+                _this84.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this84.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this84.router.navigate(['/property-list']);
+                } else {
+                  _this84.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this84.loaderService.hideLoader();
+
+                _this84.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this84.loaderService.hideLoader();
+
+              _this84.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this85 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this85.httpService.postApi(data, 'property/delete/' + data.id).subscribe(function (res) {
                 _this85.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this85.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this85.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this85.router.navigate(['/property-list']);
                 } else {
@@ -12850,35 +12907,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this85.loaderService.hideLoader();
 
               _this85.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this86 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this86.httpService.postApi(data, 'property/delete/' + data.id).subscribe(function (res) {
-                _this86.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this86.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this86.router.navigate(['/property-list']);
-                } else {
-                  _this86.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this86.loaderService.hideLoader();
-
-                _this86.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this86.loaderService.hideLoader();
-
-              _this86.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -13026,7 +13054,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PropertyEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this87 = this;
+          var _this86 = this;
 
           this.propertyForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -13041,50 +13069,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.httpService.getApi('propertyType/getAll').subscribe(function (res) {
             console.log(res);
-            _this87.propertTypes = res.data;
+            _this86.propertTypes = res.data;
           });
           this.httpService.getApi('leaseType/getAll').subscribe(function (res) {
             console.log(res);
-            _this87.leaseTypes = res.data;
+            _this86.leaseTypes = res.data;
           });
           this.httpService.getApi('rentalType/getAll').subscribe(function (res) {
             console.log(res);
-            _this87.rentalTypes = res.data;
+            _this86.rentalTypes = res.data;
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this87.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this86.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this87.propertyForm.patchValue(_this87.editDetails);
+            _this86.propertyForm.patchValue(_this86.editDetails);
 
-            _this87.loaderService.hideLoader();
+            _this86.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this88 = this;
+          var _this87 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this88.httpService.postApi(data, 'property/updateDetails/').subscribe(function (res) {
-                _this88.loaderService.hideLoader();
+              _this87.httpService.postApi(data, 'property/updateDetails/').subscribe(function (res) {
+                _this87.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this88.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this87.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this88.router.navigate(['/property-list']);
+                  _this87.router.navigate(['/property-list']);
                 } else {
-                  _this88.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this87.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this88.loaderService.hideLoader();
+                _this87.loaderService.hideLoader();
 
-                _this88.alertService.presentNetworkAlert();
+                _this87.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this88.loaderService.hideLoader();
+              _this87.loaderService.hideLoader();
 
-              _this88.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this87.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -13219,21 +13247,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PropertyListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this89 = this;
+          var _this88 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this89.httpService.getApi('property/getAll').subscribe(function (res) {
-                _this89.json = res.data;
+              _this88.httpService.getApi('property/getAll').subscribe(function (res) {
+                _this88.json = res.data;
 
-                _this89.loaderService.hideLoader();
+                _this88.loaderService.hideLoader();
               }, function (err) {
-                _this89.loaderService.hideLoader();
+                _this88.loaderService.hideLoader();
 
-                _this89.alertService.presentNetworkAlert();
+                _this88.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this89.loaderService.hideLoader();
+              _this88.loaderService.hideLoader();
             }
           });
         }
@@ -13395,29 +13423,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this90 = this;
+          var _this89 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this90.httpService.postApi(data, 'propertyType/create').subscribe(function (res) {
-                _this90.loaderService.hideLoader();
+              _this89.httpService.postApi(data, 'propertyType/create').subscribe(function (res) {
+                _this89.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this90.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this89.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this90.router.navigate(['/property-type-list']);
+                  _this89.router.navigate(['/property-type-list']);
                 } else {
-                  _this90.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this89.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this90.loaderService.hideLoader();
+                _this89.loaderService.hideLoader();
 
-                _this90.alertService.presentNetworkAlert();
+                _this89.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this90.loaderService.hideLoader();
+              _this89.loaderService.hideLoader();
 
-              _this90.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this89.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -13554,18 +13582,48 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this91 = this;
+          var _this90 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this91.httpService.postApi(data, 'propertyType/updateDetails' + id).subscribe(function (res) {
+              _this90.httpService.postApi(data, 'propertyType/updateDetails' + id).subscribe(function (res) {
+                _this90.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this90.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this90.router.navigate(['/property-type-list']);
+                } else {
+                  _this90.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this90.loaderService.hideLoader();
+
+                _this90.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this90.loaderService.hideLoader();
+
+              _this90.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this91 = this;
+
+          // data['id']=this.propertyType['_id']
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this91.httpService.postApi(data, 'propertyType/delete/' + data.id).subscribe(function (res) {
                 _this91.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this91.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this91.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this91.router.navigate(['/property-type-list']);
                 } else {
@@ -13580,36 +13638,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this91.loaderService.hideLoader();
 
               _this91.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this92 = this;
-
-          // data['id']=this.propertyType['_id']
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this92.httpService.postApi(data, 'propertyType/delete/' + data.id).subscribe(function (res) {
-                _this92.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this92.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this92.router.navigate(['/property-type-list']);
-                } else {
-                  _this92.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this92.loaderService.hideLoader();
-
-                _this92.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this92.loaderService.hideLoader();
-
-              _this92.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -13754,7 +13782,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PropertyTypeEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this93 = this;
+          var _this92 = this;
 
           this.propertyTypeForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -13762,39 +13790,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this93.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this92.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this93.propertyTypeForm.patchValue(_this93.editDetails);
+            _this92.propertyTypeForm.patchValue(_this92.editDetails);
 
-            _this93.loaderService.hideLoader();
+            _this92.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this94 = this;
+          var _this93 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this94.httpService.postApi(data, 'propertyType/updateDetails/').subscribe(function (res) {
-                _this94.loaderService.hideLoader();
+              _this93.httpService.postApi(data, 'propertyType/updateDetails/').subscribe(function (res) {
+                _this93.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this94.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this93.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this94.router.navigate(['/property-type-list']);
+                  _this93.router.navigate(['/property-type-list']);
                 } else {
-                  _this94.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this93.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this94.loaderService.hideLoader();
+                _this93.loaderService.hideLoader();
 
-                _this94.alertService.presentNetworkAlert();
+                _this93.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this94.loaderService.hideLoader();
+              _this93.loaderService.hideLoader();
 
-              _this94.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this93.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -13928,21 +13956,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PropertyTypeListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this95 = this;
+          var _this94 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this95.httpService.getApi('propertyType/getAll').subscribe(function (res) {
-                _this95.json = res.success ? res.data : [];
+              _this94.httpService.getApi('propertyType/getAll').subscribe(function (res) {
+                _this94.json = res.success ? res.data : [];
 
-                _this95.loaderService.hideLoader();
+                _this94.loaderService.hideLoader();
               }, function (err) {
-                _this95.loaderService.hideLoader();
+                _this94.loaderService.hideLoader();
 
-                _this95.alertService.presentNetworkAlert();
+                _this94.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this95.loaderService.hideLoader();
+              _this94.loaderService.hideLoader();
             }
           });
         }
@@ -14104,29 +14132,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this96 = this;
+          var _this95 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this96.httpService.postApi(data, 'rentalType/create').subscribe(function (res) {
-                _this96.loaderService.hideLoader();
+              _this95.httpService.postApi(data, 'rentalType/create').subscribe(function (res) {
+                _this95.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this96.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this95.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this96.router.navigate(['/rentalType-list']);
+                  _this95.router.navigate(['/rentalType-list']);
                 } else {
-                  _this96.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this95.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this96.loaderService.hideLoader();
+                _this95.loaderService.hideLoader();
 
-                _this96.alertService.presentNetworkAlert();
+                _this95.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this96.loaderService.hideLoader();
+              _this95.loaderService.hideLoader();
 
-              _this96.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this95.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -14263,18 +14291,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this97 = this;
+          var _this96 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this97.httpService.postApi(data, 'rentalType/updateDetails' + id).subscribe(function (res) {
+              _this96.httpService.postApi(data, 'rentalType/updateDetails' + id).subscribe(function (res) {
+                _this96.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this96.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this96.router.navigate(['/rentalType-list']);
+                } else {
+                  _this96.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this96.loaderService.hideLoader();
+
+                _this96.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this96.loaderService.hideLoader();
+
+              _this96.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this97 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this97.httpService.postApi(data, 'rentaltype/delete/' + data.id).subscribe(function (res) {
                 _this97.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this97.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this97.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this97.router.navigate(['/rentalType-list']);
                 } else {
@@ -14289,35 +14346,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this97.loaderService.hideLoader();
 
               _this97.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this98 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this98.httpService.postApi(data, 'rentaltype/delete/' + data.id).subscribe(function (res) {
-                _this98.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this98.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this98.router.navigate(['/rentalType-list']);
-                } else {
-                  _this98.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this98.loaderService.hideLoader();
-
-                _this98.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this98.loaderService.hideLoader();
-
-              _this98.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -14462,7 +14490,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RentalTypeEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this99 = this;
+          var _this98 = this;
 
           this.rentalTypeForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -14470,39 +14498,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this99.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this98.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this99.rentalTypeForm.patchValue(_this99.editDetails);
+            _this98.rentalTypeForm.patchValue(_this98.editDetails);
 
-            _this99.loaderService.hideLoader();
+            _this98.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this100 = this;
+          var _this99 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this100.httpService.postApi(data, 'rentalType/updateDetails/').subscribe(function (res) {
-                _this100.loaderService.hideLoader();
+              _this99.httpService.postApi(data, 'rentalType/updateDetails/').subscribe(function (res) {
+                _this99.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this100.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this99.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this100.router.navigate(['/rentalType-list']);
+                  _this99.router.navigate(['/rentalType-list']);
                 } else {
-                  _this100.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this99.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this100.loaderService.hideLoader();
+                _this99.loaderService.hideLoader();
 
-                _this100.alertService.presentNetworkAlert();
+                _this99.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this100.loaderService.hideLoader();
+              _this99.loaderService.hideLoader();
 
-              _this100.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this99.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -14636,21 +14664,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RentalTypeListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this101 = this;
+          var _this100 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this101.httpService.getApi('rentalType/getAll').subscribe(function (res) {
-                _this101.json = res.success ? res.data : [];
+              _this100.httpService.getApi('rentalType/getAll').subscribe(function (res) {
+                _this100.json = res.success ? res.data : [];
 
-                _this101.loaderService.hideLoader();
+                _this100.loaderService.hideLoader();
               }, function (err) {
-                _this101.loaderService.hideLoader();
+                _this100.loaderService.hideLoader();
 
-                _this101.alertService.presentNetworkAlert();
+                _this100.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this101.loaderService.hideLoader();
+              _this100.loaderService.hideLoader();
             }
           });
         }
@@ -14813,28 +14841,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this102 = this;
+          var _this101 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this102.httpService.postApi(data, 'role/create').subscribe(function (res) {
-                _this102.loaderService.hideLoader();
+              _this101.httpService.postApi(data, 'role/create').subscribe(function (res) {
+                _this101.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this102.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this101.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this102.router.navigate(['/role-list']);
+                  _this101.router.navigate(['/role-list']);
                 } else {//this.alertService.presentAlert('Error',res["error"]["message"],'Okay');
                 }
               }, function (err) {
-                _this102.loaderService.hideLoader();
+                _this101.loaderService.hideLoader();
 
-                _this102.alertService.presentNetworkAlert();
+                _this101.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this102.loaderService.hideLoader();
+              _this101.loaderService.hideLoader();
 
-              _this102.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this101.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -14971,18 +14999,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this103 = this;
+          var _this102 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this103.httpService.postApi(data, 'role/updateDetails' + id).subscribe(function (res) {
+              _this102.httpService.postApi(data, 'role/updateDetails' + id).subscribe(function (res) {
+                _this102.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this102.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this102.router.navigate(['/role-list']);
+                } else {
+                  _this102.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this102.loaderService.hideLoader();
+
+                _this102.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this102.loaderService.hideLoader();
+
+              _this102.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this103 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this103.httpService.postApi(data, 'role/delete/' + data.id).subscribe(function (res) {
                 _this103.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this103.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this103.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this103.router.navigate(['/role-list']);
                 } else {
@@ -14997,35 +15054,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this103.loaderService.hideLoader();
 
               _this103.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this104 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this104.httpService.postApi(data, 'role/delete/' + data.id).subscribe(function (res) {
-                _this104.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this104.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this104.router.navigate(['/role-list']);
-                } else {
-                  _this104.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this104.loaderService.hideLoader();
-
-                _this104.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this104.loaderService.hideLoader();
-
-              _this104.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -15170,7 +15198,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RoleEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this105 = this;
+          var _this104 = this;
 
           this.rolesForm = this.formBuilder.group({
             roleName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -15178,42 +15206,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this105.editDetails = JSON.parse(localStorage.getItem('editData'));
-            console.log(_this105.editDetails);
+            _this104.editDetails = JSON.parse(localStorage.getItem('editData'));
+            console.log(_this104.editDetails);
 
-            _this105.rolesForm.patchValue(_this105.editDetails);
+            _this104.rolesForm.patchValue(_this104.editDetails);
 
-            _this105.loaderService.hideLoader();
+            _this104.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this106 = this;
+          var _this105 = this;
 
           data['id'] = this.editDetails['_id'];
           console.log(data);
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this106.httpService.postApi(data, 'role/updateDetails').subscribe(function (res) {
-                _this106.loaderService.hideLoader();
+              _this105.httpService.postApi(data, 'role/updateDetails').subscribe(function (res) {
+                _this105.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this106.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this105.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this106.router.navigate(['/role-list']);
+                  _this105.router.navigate(['/role-list']);
                 } else {
-                  _this106.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this105.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this106.loaderService.hideLoader();
+                _this105.loaderService.hideLoader();
 
-                _this106.alertService.presentNetworkAlert();
+                _this105.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this106.loaderService.hideLoader();
+              _this105.loaderService.hideLoader();
 
-              _this106.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this105.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -15347,21 +15375,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RoleListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this107 = this;
+          var _this106 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this107.httpService.getApi('role/getAll').subscribe(function (res) {
-                _this107.json = res.data;
+              _this106.httpService.getApi('role/getAll').subscribe(function (res) {
+                _this106.json = res.data;
 
-                _this107.loaderService.hideLoader();
+                _this106.loaderService.hideLoader();
               }, function (err) {
-                _this107.loaderService.hideLoader();
+                _this106.loaderService.hideLoader();
 
-                _this107.alertService.presentNetworkAlert();
+                _this106.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this107.loaderService.hideLoader();
+              _this106.loaderService.hideLoader();
             }
           });
         }
@@ -15524,29 +15552,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this108 = this;
+          var _this107 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this108.httpService.postApi(data, 'salesGroup/create').subscribe(function (res) {
-                _this108.loaderService.hideLoader();
+              _this107.httpService.postApi(data, 'salesGroup/create').subscribe(function (res) {
+                _this107.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this108.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this107.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this108.router.navigate(['/sales-group-list']);
+                  _this107.router.navigate(['/sales-group-list']);
                 } else {
-                  _this108.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this107.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this108.loaderService.hideLoader();
+                _this107.loaderService.hideLoader();
 
-                _this108.alertService.presentNetworkAlert();
+                _this107.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this108.loaderService.hideLoader();
+              _this107.loaderService.hideLoader();
 
-              _this108.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this107.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -15683,18 +15711,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this109 = this;
+          var _this108 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this109.httpService.postApi(data, 'salesGroup/updateDetails' + id).subscribe(function (res) {
+              _this108.httpService.postApi(data, 'salesGroup/updateDetails' + id).subscribe(function (res) {
+                _this108.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this108.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this108.router.navigate(['/sales-group-list']);
+                } else {
+                  _this108.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this108.loaderService.hideLoader();
+
+                _this108.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this108.loaderService.hideLoader();
+
+              _this108.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this109 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this109.httpService.postApi(data, 'salesGroup/delete/' + data.id).subscribe(function (res) {
                 _this109.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this109.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this109.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this109.router.navigate(['/sales-group-list']);
                 } else {
@@ -15709,35 +15766,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this109.loaderService.hideLoader();
 
               _this109.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this110 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this110.httpService.postApi(data, 'salesGroup/delete/' + data.id).subscribe(function (res) {
-                _this110.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this110.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this110.router.navigate(['/sales-group-list']);
-                } else {
-                  _this110.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this110.loaderService.hideLoader();
-
-                _this110.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this110.loaderService.hideLoader();
-
-              _this110.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -15882,7 +15910,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SalesGroupEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this111 = this;
+          var _this110 = this;
 
           this.salesGroupForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -15891,39 +15919,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this111.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this110.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this111.salesGroupForm.patchValue(_this111.editDetails);
+            _this110.salesGroupForm.patchValue(_this110.editDetails);
 
-            _this111.loaderService.hideLoader();
+            _this110.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this112 = this;
+          var _this111 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this112.httpService.postApi(data, 'salesGroup/updateDetails/').subscribe(function (res) {
-                _this112.loaderService.hideLoader();
+              _this111.httpService.postApi(data, 'salesGroup/updateDetails/').subscribe(function (res) {
+                _this111.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this112.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this111.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this112.router.navigate(['/sales-group-list']);
+                  _this111.router.navigate(['/sales-group-list']);
                 } else {
-                  _this112.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this111.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this112.loaderService.hideLoader();
+                _this111.loaderService.hideLoader();
 
-                _this112.alertService.presentNetworkAlert();
+                _this111.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this112.loaderService.hideLoader();
+              _this111.loaderService.hideLoader();
 
-              _this112.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this111.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -16057,23 +16085,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SalesGroupListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this113 = this;
+          var _this112 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this113.httpService.getApi('salesGroup/getAll').subscribe(function (res) {
+              _this112.httpService.getApi('salesGroup/getAll').subscribe(function (res) {
                 // this.json = res.success?res.data:[];
                 console.log(res);
-                _this113.json = res.data;
+                _this112.json = res.data;
 
-                _this113.loaderService.hideLoader();
+                _this112.loaderService.hideLoader();
               }, function (err) {
-                _this113.loaderService.hideLoader();
+                _this112.loaderService.hideLoader();
 
-                _this113.alertService.presentNetworkAlert();
+                _this112.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this113.loaderService.hideLoader();
+              _this112.loaderService.hideLoader();
             }
           });
         }
@@ -16235,29 +16263,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this114 = this;
+          var _this113 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this114.httpService.postApi(data, 'sharingType/create').subscribe(function (res) {
-                _this114.loaderService.hideLoader();
+              _this113.httpService.postApi(data, 'sharingType/create').subscribe(function (res) {
+                _this113.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this114.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this113.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this114.router.navigate(['/sharing-type-list']);
+                  _this113.router.navigate(['/sharing-type-list']);
                 } else {
-                  _this114.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this113.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this114.loaderService.hideLoader();
+                _this113.loaderService.hideLoader();
 
-                _this114.alertService.presentNetworkAlert();
+                _this113.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this114.loaderService.hideLoader();
+              _this113.loaderService.hideLoader();
 
-              _this114.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this113.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -16394,18 +16422,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this115 = this;
+          var _this114 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this115.httpService.postApi(data, 'sharingType/updateDetails' + id).subscribe(function (res) {
+              _this114.httpService.postApi(data, 'sharingType/updateDetails' + id).subscribe(function (res) {
+                _this114.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this114.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this114.router.navigate(['/sharing-type-list']);
+                } else {
+                  _this114.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this114.loaderService.hideLoader();
+
+                _this114.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this114.loaderService.hideLoader();
+
+              _this114.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this115 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this115.httpService.postApi(data, 'sharingType/delete/' + data.id).subscribe(function (res) {
                 _this115.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this115.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this115.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this115.router.navigate(['/sharing-type-list']);
                 } else {
@@ -16420,35 +16477,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this115.loaderService.hideLoader();
 
               _this115.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this116 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this116.httpService.postApi(data, 'sharingType/delete/' + data.id).subscribe(function (res) {
-                _this116.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this116.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this116.router.navigate(['/sharing-type-list']);
-                } else {
-                  _this116.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this116.loaderService.hideLoader();
-
-                _this116.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this116.loaderService.hideLoader();
-
-              _this116.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -16593,7 +16621,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SharingTypeEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this117 = this;
+          var _this116 = this;
 
           this.sharingTypeForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -16601,39 +16629,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this117.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this116.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this117.sharingTypeForm.patchValue(_this117.editDetails);
+            _this116.sharingTypeForm.patchValue(_this116.editDetails);
 
-            _this117.loaderService.hideLoader();
+            _this116.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this118 = this;
+          var _this117 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this118.httpService.postApi(data, 'sharingType/updateDetails/').subscribe(function (res) {
-                _this118.loaderService.hideLoader();
+              _this117.httpService.postApi(data, 'sharingType/updateDetails/').subscribe(function (res) {
+                _this117.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this118.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this117.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this118.router.navigate(['/sharing-type-list']);
+                  _this117.router.navigate(['/sharing-type-list']);
                 } else {
-                  _this118.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this117.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this118.loaderService.hideLoader();
+                _this117.loaderService.hideLoader();
 
-                _this118.alertService.presentNetworkAlert();
+                _this117.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this118.loaderService.hideLoader();
+              _this117.loaderService.hideLoader();
 
-              _this118.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this117.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -16767,22 +16795,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SharingTypeListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this119 = this;
+          var _this118 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this119.httpService.getApi('sharingType/getAll').subscribe(function (res) {
+              _this118.httpService.getApi('sharingType/getAll').subscribe(function (res) {
                 // this.json = res.success?res.data:[];
-                _this119.json = res.data;
+                _this118.json = res.data;
 
-                _this119.loaderService.hideLoader();
+                _this118.loaderService.hideLoader();
               }, function (err) {
-                _this119.loaderService.hideLoader();
+                _this118.loaderService.hideLoader();
 
-                _this119.alertService.presentNetworkAlert();
+                _this118.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this119.loaderService.hideLoader();
+              _this118.loaderService.hideLoader();
             }
           });
         }
@@ -16965,28 +16993,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisPhoto",
         value: function readThisPhoto(inputValue) {
-          var _this120 = this;
+          var _this119 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this120.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this119.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this120.httpService.postApi({
+            _this119.httpService.postApi({
               tenantPhoto: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this120.loaderService.hideLoader();
+              _this119.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this120.tenantForm.patchValue({
+                _this119.tenantForm.patchValue({
                   tenantPhoto: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this120.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this119.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -17002,28 +17030,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisDocument",
         value: function readThisDocument(inputValue) {
-          var _this121 = this;
+          var _this120 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this121.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this120.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this121.httpService.postApi({
+            _this120.httpService.postApi({
               documentsUpload: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this121.loaderService.hideLoader();
+              _this120.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this121.tenantForm.patchValue({
+                _this120.tenantForm.patchValue({
                   documentsUpload: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this121.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this120.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -17033,29 +17061,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this122 = this;
+          var _this121 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this122.httpService.postApi(data, 'tenant/create').subscribe(function (res) {
-                _this122.loaderService.hideLoader();
+              _this121.httpService.postApi(data, 'tenant/create').subscribe(function (res) {
+                _this121.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this122.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this121.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this122.router.navigate(['/tenant-list']);
+                  _this121.router.navigate(['/tenant-list']);
                 } else {
-                  _this122.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this121.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this122.loaderService.hideLoader();
+                _this121.loaderService.hideLoader();
 
-                _this122.alertService.presentNetworkAlert();
+                _this121.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this122.loaderService.hideLoader();
+              _this121.loaderService.hideLoader();
 
-              _this122.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this121.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -17194,18 +17222,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this123 = this;
+          var _this122 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this123.httpService.postApi(data, 'tenant/updateDetails' + id).subscribe(function (res) {
+              _this122.httpService.postApi(data, 'tenant/updateDetails' + id).subscribe(function (res) {
+                _this122.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this122.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this122.router.navigate(['/tenant-list']);
+                } else {
+                  _this122.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this122.loaderService.hideLoader();
+
+                _this122.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this122.loaderService.hideLoader();
+
+              _this122.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this123 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this123.httpService.postApi(data, 'tenant/delete/' + data.id).subscribe(function (res) {
                 _this123.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this123.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this123.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this123.router.navigate(['/tenant-list']);
                 } else {
@@ -17220,35 +17277,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this123.loaderService.hideLoader();
 
               _this123.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this124 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this124.httpService.postApi(data, 'tenant/delete/' + data.id).subscribe(function (res) {
-                _this124.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this124.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this124.router.navigate(['/tenant-list']);
-                } else {
-                  _this124.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this124.loaderService.hideLoader();
-
-                _this124.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this124.loaderService.hideLoader();
-
-              _this124.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -17400,7 +17428,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TenantEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this125 = this;
+          var _this124 = this;
 
           this.tenantForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -17416,11 +17444,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this125.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this124.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this125.tenantForm.patchValue(_this125.editDetails);
+            _this124.tenantForm.patchValue(_this124.editDetails);
 
-            _this125.loaderService.hideLoader();
+            _this124.loaderService.hideLoader();
           });
         }
       }, {
@@ -17432,28 +17460,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisPhoto",
         value: function readThisPhoto(inputValue) {
-          var _this126 = this;
+          var _this125 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this126.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this125.image = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this126.httpService.postApi({
+            _this125.httpService.postApi({
               tenantPhoto: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this126.loaderService.hideLoader();
+              _this125.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this126.tenantForm.patchValue({
+                _this125.tenantForm.patchValue({
                   tenantPhoto: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this126.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this125.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -17469,28 +17497,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "readThisDocument",
         value: function readThisDocument(inputValue) {
-          var _this127 = this;
+          var _this126 = this;
 
           var file = inputValue.files[0];
           var myReader = new FileReader();
 
           myReader.onloadend = function (e) {
-            _this127.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
+            _this126.document = myReader.result; // this.categoryAddForm.patchValue({photo:myReader.result});
 
-            _this127.httpService.postApi({
+            _this126.httpService.postApi({
               documentsUpload: myReader.result
             }, 'Item/uploadImage').subscribe(function (res) {
-              _this127.loaderService.hideLoader();
+              _this126.loaderService.hideLoader();
 
               if (res) {
                 // res.success
-                _this127.tenantForm.patchValue({
+                _this126.tenantForm.patchValue({
                   documentsUpload: res.success
                 });
               } else {//this.modal.showModal({'success': false, 'message': res.error});
               }
             }, function (err) {
-              _this127.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
+              _this126.loaderService.hideLoader(); //this.modal.showModal({'success': false, 'message': err});
 
             });
           };
@@ -17500,29 +17528,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this128 = this;
+          var _this127 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this128.httpService.postApi(data, 'tenant/updateDetails/').subscribe(function (res) {
-                _this128.loaderService.hideLoader();
+              _this127.httpService.postApi(data, 'tenant/updateDetails/').subscribe(function (res) {
+                _this127.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this128.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this127.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this128.router.navigate(['/tenant-list']);
+                  _this127.router.navigate(['/tenant-list']);
                 } else {
-                  _this128.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this127.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this128.loaderService.hideLoader();
+                _this127.loaderService.hideLoader();
 
-                _this128.alertService.presentNetworkAlert();
+                _this127.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this128.loaderService.hideLoader();
+              _this127.loaderService.hideLoader();
 
-              _this128.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this127.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -17658,21 +17686,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TenantListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this129 = this;
+          var _this128 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this129.httpService.getApi('tenant/getAll').subscribe(function (res) {
-                _this129.json = res.success ? res.data : [];
+              _this128.httpService.getApi('tenant/getAll').subscribe(function (res) {
+                _this128.json = res.success ? res.data : [];
 
-                _this129.loaderService.hideLoader();
+                _this128.loaderService.hideLoader();
               }, function (err) {
-                _this129.loaderService.hideLoader();
+                _this128.loaderService.hideLoader();
 
-                _this129.alertService.presentNetworkAlert();
+                _this128.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this129.loaderService.hideLoader();
+              _this128.loaderService.hideLoader();
             }
           });
         }
@@ -17846,26 +17874,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UnitsAddComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this130 = this;
+          var _this129 = this;
 
           this.httpService.getApi('property/getAll').subscribe(function (res) {
             console.log('properties', res['success']);
-            _this130.properties = res.data;
+            _this129.properties = res.data;
           });
           this.httpService.getApi('amenities/getAll').subscribe(function (res) {
             console.log('amenities', res);
-            _this130.amenities = res.data;
+            _this129.amenities = res.data;
 
-            for (var i = 0; i < _this130.amenities.length; i++) {
+            for (var i = 0; i < _this129.amenities.length; i++) {
               var json = {
-                'name': _this130.amenities[i].name,
-                '_id': _this130.amenities[i]._id
+                'name': _this129.amenities[i].name,
+                '_id': _this129.amenities[i]._id
               };
 
-              _this130.dropdownList.push(json);
+              _this129.dropdownList.push(json);
             }
 
-            console.log(_this130.dropdownList);
+            console.log(_this129.dropdownList);
           });
           this.dropdownSettings = {
             singleSelection: false,
@@ -17895,40 +17923,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changeProperty",
         value: function changeProperty() {
-          var _this131 = this;
+          var _this130 = this;
 
           console.log(this.property);
           this.units.forEach(function (element) {
-            element.propertyId = _this131.getpropertyId();
+            element.propertyId = _this130.getpropertyId();
           });
         }
       }, {
         key: "submit",
         value: function submit() {
-          var _this132 = this;
+          var _this131 = this;
 
           console.log("units json", this.units);
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this132.httpService.postApi(_this132.units, 'units/create').subscribe(function (res) {
-                _this132.loaderService.hideLoader();
+              _this131.httpService.postApi(_this131.units, 'units/create').subscribe(function (res) {
+                _this131.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this132.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this131.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this132.router.navigate(['/units-list']);
+                  _this131.router.navigate(['/units-list']);
                 } else {
-                  _this132.alertService.presentAlert('Error', res["message"], 'Okay');
+                  _this131.alertService.presentAlert('Error', res["message"], 'Okay');
                 }
               }, function (err) {
-                _this132.loaderService.hideLoader();
+                _this131.loaderService.hideLoader();
 
-                _this132.alertService.presentNetworkAlert();
+                _this131.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this132.loaderService.hideLoader();
+              _this131.loaderService.hideLoader();
 
-              _this132.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this131.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -18104,18 +18132,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this133 = this;
+          var _this132 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this133.httpService.postApi(data, 'units/updateDetails' + id).subscribe(function (res) {
+              _this132.httpService.postApi(data, 'units/updateDetails' + id).subscribe(function (res) {
+                _this132.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this132.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this132.router.navigate(['/units-list']);
+                } else {
+                  _this132.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this132.loaderService.hideLoader();
+
+                _this132.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this132.loaderService.hideLoader();
+
+              _this132.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this133 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this133.httpService.postApi(data, 'units/delete/' + data.id).subscribe(function (res) {
                 _this133.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this133.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this133.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this133.router.navigate(['/units-list']);
                 } else {
@@ -18130,35 +18187,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this133.loaderService.hideLoader();
 
               _this133.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this134 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this134.httpService.postApi(data, 'units/delete/' + data.id).subscribe(function (res) {
-                _this134.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this134.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this134.router.navigate(['/units-list']);
-                } else {
-                  _this134.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this134.loaderService.hideLoader();
-
-                _this134.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this134.loaderService.hideLoader();
-
-              _this134.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -18306,7 +18334,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UnitsEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this135 = this;
+          var _this134 = this;
 
           this.unitsForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -18322,46 +18350,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.httpService.getApi('property/getAll').subscribe(function (res) {
             console.log('properties', res['success']);
-            _this135.properties = res.data;
+            _this134.properties = res.data;
           });
           this.httpService.getApi('amenities/getAll').subscribe(function (res) {
             console.log('amenities', res['success']);
-            _this135.amenities = res.data;
+            _this134.amenities = res.data;
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this135.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this134.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this135.unitsForm.patchValue(_this135.editDetails);
+            _this134.unitsForm.patchValue(_this134.editDetails);
 
-            _this135.loaderService.hideLoader();
+            _this134.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this136 = this;
+          var _this135 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this136.httpService.postApi(data, 'units/updateDetails/').subscribe(function (res) {
-                _this136.loaderService.hideLoader();
+              _this135.httpService.postApi(data, 'units/updateDetails/').subscribe(function (res) {
+                _this135.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this136.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this135.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this136.router.navigate(['/units-list']);
+                  _this135.router.navigate(['/units-list']);
                 } else {
-                  _this136.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this135.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this136.loaderService.hideLoader();
+                _this135.loaderService.hideLoader();
 
-                _this136.alertService.presentNetworkAlert();
+                _this135.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this136.loaderService.hideLoader();
+              _this135.loaderService.hideLoader();
 
-              _this136.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this135.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -18495,22 +18523,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UnitsListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this137 = this;
+          var _this136 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this137.httpService.getApi('units/getAll').subscribe(function (res) {
-                _this137.json = res.success ? res.data : [];
-                console.log(_this137.json);
+              _this136.httpService.getApi('units/getAll').subscribe(function (res) {
+                _this136.json = res.success ? res.data : [];
+                console.log(_this136.json);
 
-                _this137.loaderService.hideLoader();
+                _this136.loaderService.hideLoader();
               }, function (err) {
-                _this137.loaderService.hideLoader();
+                _this136.loaderService.hideLoader();
 
-                _this137.alertService.presentNetworkAlert();
+                _this136.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this137.loaderService.hideLoader();
+              _this136.loaderService.hideLoader();
             }
           });
         }
@@ -18665,7 +18693,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UserAddComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this138 = this;
+          var _this137 = this;
 
           this.userForm = this.formBuilder.group({
             username: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -18675,35 +18703,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.httpService.getApi('role/getAll').subscribe(function (res) {
             console.log("roles", res);
-            _this138.json = res['data'];
+            _this137.json = res['data'];
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this139 = this;
+          var _this138 = this;
 
           this.loaderService.showLoader('Adding Please wait ..').then(function () {
             try {
-              _this139.httpService.postApi(data, 'user/create').subscribe(function (res) {
-                _this139.loaderService.hideLoader();
+              _this138.httpService.postApi(data, 'user/create').subscribe(function (res) {
+                _this138.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this139.alertService.presentAlert('Success', 'Successfully added', 'Okay');
+                  _this138.alertService.presentAlert('Success', 'Successfully added', 'Okay');
 
-                  _this139.router.navigate(['/user-list']);
+                  _this138.router.navigate(['/user-list']);
                 } else {
-                  _this139.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this138.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this139.loaderService.hideLoader();
+                _this138.loaderService.hideLoader();
 
-                _this139.alertService.presentNetworkAlert();
+                _this138.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this139.loaderService.hideLoader();
+              _this138.loaderService.hideLoader();
 
-              _this139.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this138.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -18840,18 +18868,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleStatus",
         value: function toggleStatus(id, status) {
-          var _this140 = this;
+          var _this139 = this;
 
           var data = {
             isAvailable: status
           };
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this140.httpService.postApi(data, 'user/updateDetails' + id).subscribe(function (res) {
+              _this139.httpService.postApi(data, 'user/updateDetails' + id).subscribe(function (res) {
+                _this139.loaderService.hideLoader();
+
+                if (res["success"]) {
+                  _this139.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+
+                  _this139.router.navigate(['/user-list']);
+                } else {
+                  _this139.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                }
+              }, function (err) {
+                _this139.loaderService.hideLoader();
+
+                _this139.alertService.presentNetworkAlert();
+              });
+            } catch (e) {
+              _this139.loaderService.hideLoader();
+
+              _this139.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+            }
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(data) {
+          var _this140 = this;
+
+          this.loaderService.showLoader('Updating Please wait ..').then(function () {
+            try {
+              _this140.httpService.postApi(data, 'user/delete/' + data.id).subscribe(function (res) {
                 _this140.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this140.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this140.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
 
                   _this140.router.navigate(['/user-list']);
                 } else {
@@ -18866,35 +18923,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this140.loaderService.hideLoader();
 
               _this140.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
-            }
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(data) {
-          var _this141 = this;
-
-          this.loaderService.showLoader('Updating Please wait ..').then(function () {
-            try {
-              _this141.httpService.postApi(data, 'user/delete/' + data.id).subscribe(function (res) {
-                _this141.loaderService.hideLoader();
-
-                if (res["success"]) {
-                  _this141.alertService.presentAlert('Success', 'Successfully deleted', 'Okay');
-
-                  _this141.router.navigate(['/user-list']);
-                } else {
-                  _this141.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
-                }
-              }, function (err) {
-                _this141.loaderService.hideLoader();
-
-                _this141.alertService.presentNetworkAlert();
-              });
-            } catch (e) {
-              _this141.loaderService.hideLoader();
-
-              _this141.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -19040,7 +19068,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UserEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this142 = this;
+          var _this141 = this;
 
           this.userForm = this.formBuilder.group({
             _id: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -19050,44 +19078,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             isAvailable: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.loaderService.showLoader('Please wait while fetching ..').then(function () {
-            _this142.httpService.getApi('role/getAll').subscribe(function (res) {
+            _this141.httpService.getApi('role/getAll').subscribe(function (res) {
               console.log("roles", res);
-              _this142.json = res['data'];
+              _this141.json = res['data'];
             });
 
-            _this142.editDetails = JSON.parse(localStorage.getItem('editData'));
+            _this141.editDetails = JSON.parse(localStorage.getItem('editData'));
 
-            _this142.userForm.patchValue(_this142.editDetails);
+            _this141.userForm.patchValue(_this141.editDetails);
 
-            _this142.loaderService.hideLoader();
+            _this141.loaderService.hideLoader();
           });
         }
       }, {
         key: "submit",
         value: function submit(data) {
-          var _this143 = this;
+          var _this142 = this;
 
           this.loaderService.showLoader('Updating Please wait ..').then(function () {
             try {
-              _this143.httpService.postApi(data, 'user/updateDetails/').subscribe(function (res) {
-                _this143.loaderService.hideLoader();
+              _this142.httpService.postApi(data, 'user/updateDetails/').subscribe(function (res) {
+                _this142.loaderService.hideLoader();
 
                 if (res["success"]) {
-                  _this143.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
+                  _this142.alertService.presentAlert('Success', 'Successfully updated', 'Okay');
 
-                  _this143.router.navigate(['/user-list']);
+                  _this142.router.navigate(['/user-list']);
                 } else {
-                  _this143.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
+                  _this142.alertService.presentAlert('Error', res["error"]["message"], 'Okay');
                 }
               }, function (err) {
-                _this143.loaderService.hideLoader();
+                _this142.loaderService.hideLoader();
 
-                _this143.alertService.presentNetworkAlert();
+                _this142.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this143.loaderService.hideLoader();
+              _this142.loaderService.hideLoader();
 
-              _this143.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
+              _this142.alertService.presentAlert('Error', 'Something went wrong please try again', 'Okay');
             }
           });
         }
@@ -19222,26 +19250,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UserListComponent, [{
         key: "loadData",
         value: function loadData() {
-          var _this144 = this;
+          var _this143 = this;
 
           this.loaderService.showLoader('Fetching Please wait ..').then(function () {
             try {
-              _this144.httpService.getApi('role/getAll').subscribe(function (res) {
+              _this143.httpService.getApi('role/getAll').subscribe(function (res) {
                 console.log("roles", res);
-                _this144.roles = res['data'];
+                _this143.roles = res['data'];
               });
 
-              _this144.httpService.getApi('user/getAll').subscribe(function (res) {
-                _this144.json = res.data;
+              _this143.httpService.getApi('user/getAll').subscribe(function (res) {
+                _this143.json = res.data;
 
-                _this144.loaderService.hideLoader();
+                _this143.loaderService.hideLoader();
               }, function (err) {
-                _this144.loaderService.hideLoader();
+                _this143.loaderService.hideLoader();
 
-                _this144.alertService.presentNetworkAlert();
+                _this143.alertService.presentNetworkAlert();
               });
             } catch (e) {
-              _this144.loaderService.hideLoader();
+              _this143.loaderService.hideLoader();
             }
           });
         }
