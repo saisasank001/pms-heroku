@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build":"git add . && git commit -am 'make it better' && git push heroku mastergit push heroku master"
   },
   "dependencies": {
     "@hapi/joi": "^15.1.0",
