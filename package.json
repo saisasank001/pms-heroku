@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "build":"git add . && git commit -m 'make it better' && git push heroku master"
+    "app-build":"git add . && git commit -m 'make it better' && git push heroku master"
   },
   "engines": {
     "node": "12.13.0"
