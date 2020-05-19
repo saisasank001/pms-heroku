@@ -76,7 +76,7 @@ app.get('/icons', function(req, res) {
   }]);
 })
 
-app.get('tenancyTypes/getAll',function(req,res){
+app.get('/tenancyTypes/getAll',function(req,res){
     res.send([
         {id:'family',name:"Family"},
         {id:'bachelors',name:"Bachelors"},
@@ -84,7 +84,7 @@ app.get('tenancyTypes/getAll',function(req,res){
     ])
 })
 
-app.get('ownerShip/getAll',function(req,res){
+app.get('/ownerShip/getAll',function(req,res){
     res.send([
         {id:'freehold',name:"Freehold"},
         {id:'leasehold',name:"Leasehold"},
@@ -92,7 +92,7 @@ app.get('ownerShip/getAll',function(req,res){
         {id:'cooperativeSociety',name:"Cooperative Society"}
     ])
 })
-app.get('roomTypes/getAll',function(req,res){
+app.get('/roomTypes/getAll',function(req,res){
     res.send([
         {id:'poojaRoom',name:"Pooja Room"},
         {id:'balcony',name:"Balcony"},
