@@ -76,6 +76,30 @@ app.get('/icons', function(req, res) {
   }]);
 })
 
+app.get('tenancyTypes/getAll',function(req,res){
+    res.send([
+        {id:'family',name:"Family"},
+        {id:'bachelors',name:"Bachelors"},
+        {id:'other',name:"Other"}
+    ])
+})
+
+app.get('ownerShip/getAll',function(req,res){
+    res.send([
+        {id:'freehold',name:"Freehold"},
+        {id:'leasehold',name:"Leasehold"},
+        {id:'powerOfAttorney',name:"Power of Attorney"},
+        {id:'cooperativeSociety',name:"Cooperative Society"}
+    ])
+})
+app.get('roomTypes/getAll',function(req,res){
+    res.send([
+        {id:'poojaRoom',name:"Pooja Room"},
+        {id:'balcony',name:"Balcony"},
+        {id:'bathroom',name:"Bathroom"}
+    ])
+})
+
 app.post('/Image/uploadImage',function(req,res){
     let tmp=new Date().getTime();
     var filepath = base64Img.img(req.body.photo, './public/', tmp, function(err, filepath) {
