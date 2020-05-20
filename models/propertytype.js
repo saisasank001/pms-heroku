@@ -6,6 +6,9 @@ var dbSchema = new Schema({
       name: {
         type: String,
         required: true    },
+        leaseTypeId:{
+            type: String,
+        required: true    },
 
         isAvailable: {
         type: String,
