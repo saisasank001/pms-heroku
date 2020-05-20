@@ -27,11 +27,6 @@ var dbSchema = new Schema({
         type:String,
         required:false
     },
-    Timestamp: {
-        type: Date, 
-        default: Date.now,
-        required: true
-    } 
 });
 
 
