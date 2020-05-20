@@ -7,6 +7,12 @@ var dbSchema = new Schema({
         type: String,
         required: true    },
 
+        leaseTypeId:{
+            type: String,
+            required:true
+
+        },
+
         isAvailable: {
         type: String,
         required: true    },
