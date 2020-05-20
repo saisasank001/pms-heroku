@@ -3,6 +3,7 @@ var loadModel = require('../models/propertyType');
 
 exports.create = function (req, res) {
     req.body.createdAt = req.body.createdAt?req.body.createdAt:new Date();
+    console.log(req.body)
     loadModel.create(req.body, function (err, data) {
         if (!err) {
             res.send({
